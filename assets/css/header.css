@@ -12,8 +12,8 @@ html {
 
 /* CORREÇÃO: Remover padding-top do main - O JavaScript não vai mais manipular isso */
 main {
-  padding-top: 0 !important; /* Forçar remoção do padding */
-  transition: none; /* Remover transição que pode causar flicker */
+  padding-top: 0 !important;
+  transition: none;
 }
 
 a {
@@ -136,20 +136,13 @@ a {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* ===== MENU DE NAVEGAÇÃO ===== */
+/* ===== MENU DE NAVEGAÇÃO - CORRIGIDO ===== */
 #linkssecoes {
   display: flex;
   align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  max-width: calc(100% - 300px);
-}
-
-#linkssecoes::-webkit-scrollbar {
-  display: none;
+  flex: 1; /* Ocupar espaço disponível */
+  justify-content: flex-end; /* Alinhar à direita */
+  min-width: 0; /* Permitir encolher */
 }
 
 #ulsecoes {
@@ -159,9 +152,10 @@ a {
   padding: 0;
   gap: 4px;
   flex-wrap: nowrap;
+  justify-content: flex-end;
 }
 
-/* ATUALIZADO: Links mais PESADOS (font-weight aumentado) */
+/* ATUALIZADO: Links mais PESADOS */
 #ulsecoes li {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -169,12 +163,12 @@ a {
   align-items: center;
   padding: 8px 12px;
   font-family: "Manrope", sans-serif;
-  font-weight: 600; /* Aumentado de 500 para 600 */
+  font-weight: 600;
   white-space: nowrap;
   border-radius: 30px;
-  font-size: 0.95rem; /* Aumentado ligeiramente */
+  font-size: 0.9rem;
   letter-spacing: 0.3px;
-  text-transform: uppercase; /* Adicionado para dar mais peso visual */
+  text-transform: uppercase;
 }
 
 #ulsecoes li:hover {
@@ -183,13 +177,13 @@ a {
   padding-left: 16px;
   padding-right: 16px;
   transform: scale(0.98);
-  font-weight: 700; /* Ainda mais pesado no hover */
+  font-weight: 700;
 }
 
 #cabecalho.scrolled #ulsecoes li {
   padding: 6px 10px;
-  font-size: 0.9rem;
-  font-weight: 600; /* Manter pesado mesmo quando scrolled */
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 /* ===== OVERLAY ===== */
@@ -210,7 +204,6 @@ a {
 }
 
 /* ===== CORREÇÃO PARA A PRIMEIRA SEÇÃO ===== */
-/* Garantir que a primeira seção não fique escondida atrás do header */
 #inicio {
   position: relative;
   margin-top: 0;
@@ -218,16 +211,16 @@ a {
 }
 
 #inicio #inc {
-  padding-top: 90px; /* Altura do header normal */
+  padding-top: 90px;
   box-sizing: border-box;
   height: 100vh;
 }
 
 #cabecalho.scrolled ~ main #inicio #inc {
-  padding-top: 70px; /* Altura do header reduzido */
+  padding-top: 70px;
 }
 
-/* Para navegação por âncoras em outras seções */
+/* Para navegação por âncoras */
 section {
   scroll-margin-top: 90px;
 }
@@ -238,20 +231,18 @@ section {
 
 /* ===== MEDIA QUERIES ===== */
 
-/* Tablets e desktop médio */
+/* Desktop médio */
 @media (max-width: 1200px) {
   #ulsecoes li {
     padding: 8px 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 1100px) {
   #ulsecoes li {
     padding: 8px 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.8rem;
   }
   
   #nomemph {
@@ -271,8 +262,7 @@ section {
   
   #ulsecoes li {
     padding: 6px 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.75rem;
   }
 }
 
@@ -330,7 +320,7 @@ section {
     display: flex;
   }
 
-  /* Esconder menu normal e mostrar versão mobile lateral */
+  /* Reset das propriedades desktop para o menu mobile */
   #linkssecoes {
     position: fixed;
     top: 0;
@@ -346,8 +336,8 @@ section {
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     overflow-y: auto;
-    max-width: none;
-    display: block;
+    flex: none; /* Reset do flex */
+    justify-content: flex-start; /* Reset */
   }
 
   #linkssecoes.active {
@@ -358,14 +348,14 @@ section {
     flex-direction: column;
     width: 100%;
     gap: 10px;
+    justify-content: flex-start; /* Reset */
   }
 
-  /* Links mais pesados também no mobile */
   #ulsecoes li {
     width: 100%;
     padding: 15px 20px;
     font-size: 1.1rem;
-    font-weight: 600; /* Mantido pesado */
+    font-weight: 600;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -382,7 +372,6 @@ section {
     font-weight: 700;
   }
 
-  /* Ajuste para o barmenu em mobile */
   #barmenu.is-fixed {
     top: calc(85% - 75px);
   }
@@ -390,7 +379,6 @@ section {
 
 /* Telemóveis pequenos */
 @media (max-width: 480px) {
-  /* CORREÇÃO MOBILE PEQUENO */
   #inicio #inc {
     padding-top: 65px;
   }
