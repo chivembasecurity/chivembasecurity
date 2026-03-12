@@ -10,31 +10,34 @@ html {
   background-color: #F2F2F2;
 }
 
-/* Adicionar padding-top ao main para compensar o header fixo */
+/* CORREÇÃO: Remover padding-top do main - O JavaScript não vai mais manipular isso */
 main {
-  padding-top: 105px;
+  padding-top: 0 !important; /* Forçar remoção do padding */
+  transition: none; /* Remover transição que pode causar flicker */
 }
 
-a{
+a {
   text-decoration: none;
 }
 
+/* ===== HEADER FIXO ===== */
 #cabecalho {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;           
-  box-sizing: border-box;  
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 12px 20px;
   color: #fff;
-  z-index: 1000; 
+  z-index: 1000;
   transition: all 0.3s ease-in-out;
   background: rgba(23, 23, 23, 0.27);
   backdrop-filter: blur(5px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 70px;
 }
 
 #cabecalho:hover {
@@ -42,80 +45,72 @@ a{
   backdrop-filter: blur(8px);
 }
 
+/* Header quando scrollado */
 #cabecalho.scrolled {
-  background: rgba(23, 23, 23, 0.9);
+  background: rgba(23, 23, 23, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   padding: 5px 20px;
+  min-height: 60px;
 }
 
+/* Container da logo e nome */
 #emp {
   display: flex;
-  box-sizing: border-box;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  background-color: transparent; /* Garantir transparência */
+  gap: 15px;
+  flex-shrink: 0;
 }
 
 #nomemph {
   white-space: nowrap;
-  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  font-size: clamp(1.3rem, 4vw, 2rem);
   font-weight: 550;
   font-family: "Manrope", sans-serif;
   transition: all 0.3s ease;
+  line-height: 1.2;
 }
 
 #cabecalho.scrolled #nomemph {
-  font-size: clamp(1.3rem, 4vw, 2.0rem);
+  font-size: clamp(1.1rem, 3.5vw, 1.7rem);
 }
 
-/* ===== LOGO COM FUNDO TRANSPARENTE (PNG) ===== */
+/* ===== LOGO ===== */
 #imgl {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  line-height: 0; /* Remove espaço extra */
+  line-height: 0;
   padding: 0;
   margin: 0;
 }
 
 #logoheader {
-  width: 85px;
-  height: 85px;
-  /* Remove o border-radius que criava a bola */
+  width: 70px;
+  height: 70px;
   border-radius: 0;
-  /* Garantir que a transparência funcione */
   background-color: transparent;
-  /* Manter proporção */
   object-fit: contain;
   object-position: center;
-  /* Remover qualquer fundo residual */
-  background: none;
-  /* Suavizar bordas da imagem */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  /* Transição suave */
   transition: all 0.3s ease;
-  /* Garantir que não haja bordas */
   border: none;
   outline: none;
   box-shadow: none;
 }
 
 #cabecalho.scrolled #logoheader {
-  width: 75px;
-  height: 75px;
+  width: 55px;
+  height: 55px;
 }
 
-/* Menu Hamburger */
+/* ===== MENU HAMBURGER ===== */
 .menu-hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 21px;
+  width: 28px;
+  height: 20px;
   cursor: pointer;
   z-index: 1001;
 }
@@ -129,7 +124,6 @@ a{
   transition: all 0.3s ease;
 }
 
-/* Animação do hamburger quando ativo */
 .menu-hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -139,13 +133,23 @@ a{
 }
 
 .menu-hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Menu de navegação */
+/* ===== MENU DE NAVEGAÇÃO ===== */
 #linkssecoes {
   display: flex;
   align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  max-width: calc(100% - 300px);
+}
+
+#linkssecoes::-webkit-scrollbar {
+  display: none;
 }
 
 #ulsecoes {
@@ -153,30 +157,42 @@ a{
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 10px;
+  gap: 4px;
+  flex-wrap: nowrap;
 }
 
+/* ATUALIZADO: Links mais PESADOS (font-weight aumentado) */
 #ulsecoes li {
-  transition: .3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 10px 1vw;
+  padding: 8px 12px;
   font-family: "Manrope", sans-serif;
-  font-weight: 500;
+  font-weight: 600; /* Aumentado de 500 para 600 */
   white-space: nowrap;
-  border-radius: 16px;
+  border-radius: 30px;
+  font-size: 0.95rem; /* Aumentado ligeiramente */
+  letter-spacing: 0.3px;
+  text-transform: uppercase; /* Adicionado para dar mais peso visual */
 }
 
 #ulsecoes li:hover {
   color: rgb(248, 38, 52);
-  background-color: rgba(52, 52, 52, 0.8);
-  padding-left: 30px;
-  padding-right: 30px;
-  transform: scale(0.95);
+  background-color: rgba(255, 255, 255, 0.15);
+  padding-left: 16px;
+  padding-right: 16px;
+  transform: scale(0.98);
+  font-weight: 700; /* Ainda mais pesado no hover */
 }
 
-/* Overlay para quando o menu mobile estiver aberto */
+#cabecalho.scrolled #ulsecoes li {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  font-weight: 600; /* Manter pesado mesmo quando scrolled */
+}
+
+/* ===== OVERLAY ===== */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -193,121 +209,102 @@ a{
   display: block;
 }
 
-/* Ajuste para o barmenu fixo com header fixo */
-#barmenu.is-fixed {
-  position: fixed;
-  top: calc(85% - 105px);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
+/* ===== CORREÇÃO PARA A PRIMEIRA SEÇÃO ===== */
+/* Garantir que a primeira seção não fique escondida atrás do header */
+#inicio {
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-/* Media Query para telas pequenas */
-@media (max-width: 750px) {
-  main {
-    padding-top: 85px;
-  }
+#inicio #inc {
+  padding-top: 90px; /* Altura do header normal */
+  box-sizing: border-box;
+  height: 100vh;
+}
 
-  #cabecalho {
-    padding: 12px 15px;
-    background: rgba(23, 23, 23, 0.95);
-    backdrop-filter: blur(10px);
-  }
+#cabecalho.scrolled ~ main #inicio #inc {
+  padding-top: 70px; /* Altura do header reduzido */
+}
 
-  #cabecalho.scrolled {
-    background: rgba(10, 10, 10, 0.98);
-    padding: 5px 15px;
-  }
+/* Para navegação por âncoras em outras seções */
+section {
+  scroll-margin-top: 90px;
+}
 
-  #logoheader {
-    width: 65px;
-    height: 65px;
-  }
+#cabecalho.scrolled ~ main section {
+  scroll-margin-top: 70px;
+}
 
-  #cabecalho.scrolled #logoheader {
-    width: 55px;
-    height: 55px;
-  }
+/* ===== MEDIA QUERIES ===== */
 
-  #nomemph {
-    font-size: clamp(1.2rem, 4vw, 2.0rem);
-  }
-
-  #cabecalho.scrolled #nomemph {
-    font-size: clamp(1.1rem, 3.5vw, 1.7rem);
-  }
-
-  /* Mostrar hamburger */
-  .menu-hamburger {
-    display: flex;
-  }
-
-  /* Esconder menu normal e mostrar versão mobile */
-  #linkssecoes {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(30, 30, 30, 0.98));
-    backdrop-filter: blur(10px);
-    transition: right 0.3s ease;
-    z-index: 1000;
-    padding: 100px 20px 20px;
-    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  #linkssecoes.active {
-    right: 0;
-  }
-
-  #ulsecoes {
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
-  }
-
+/* Tablets e desktop médio */
+@media (max-width: 1200px) {
   #ulsecoes li {
-    width: 100%;
-    padding: 15px 20px;
-    font-size: 1.2rem;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  #ulsecoes li:hover {
-    padding-left: 30px;
-    background-color: rgb(248, 38, 52);
-    color: #fff;
-    transform: scale(1);
-    border-color: rgb(248, 38, 52);
-  }
-
-  /* Ajuste para o barmenu em mobile */
-  #barmenu.is-fixed {
-    top: calc(85% - 85px);
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
 }
 
-/* Ajuste para telas muito pequenas */
-@media (max-width: 480px) {
-  main {
+@media (max-width: 1100px) {
+  #ulsecoes li {
+    padding: 8px 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  #nomemph {
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  }
+  
+  #logoheader {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 950px) {
+  #ulsecoes {
+    gap: 2px;
+  }
+  
+  #ulsecoes li {
+    padding: 6px 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+/* Mobile - ATIVAR MENU HAMBURGER */
+@media (max-width: 750px) {
+  /* CORREÇÃO MOBILE */
+  #inicio #inc {
     padding-top: 75px;
   }
+  
+  section {
+    scroll-margin-top: 75px;
+  }
+  
+  #cabecalho.scrolled ~ main #inicio #inc {
+    padding-top: 65px;
+  }
+  
+  #cabecalho.scrolled ~ main section {
+    scroll-margin-top: 65px;
+  }
 
   #cabecalho {
-    padding: 10px 12px;
+    padding: 10px 15px;
+    background: rgba(23, 23, 23, 0.95);
+    backdrop-filter: blur(10px);
+    min-height: 65px;
   }
 
   #cabecalho.scrolled {
-    padding: 5px 12px;
-  }
-
-  #nomemph {
-    font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+    padding: 5px 15px;
+    min-height: 55px;
   }
 
   #logoheader {
@@ -319,9 +316,150 @@ a{
     width: 45px;
     height: 45px;
   }
+
+  #nomemph {
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+  }
+
+  #cabecalho.scrolled #nomemph {
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
+  }
+
+  /* Mostrar hamburger */
+  .menu-hamburger {
+    display: flex;
+  }
+
+  /* Esconder menu normal e mostrar versão mobile lateral */
+  #linkssecoes {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(30, 30, 30, 0.98));
+    backdrop-filter: blur(10px);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 80px 20px 30px;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+    max-width: none;
+    display: block;
+  }
+
+  #linkssecoes.active {
+    right: 0;
+  }
+
+  #ulsecoes {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* Links mais pesados também no mobile */
+  #ulsecoes li {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 600; /* Mantido pesado */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: flex-start;
+    text-transform: uppercase;
+  }
+
+  #ulsecoes li:hover {
+    padding-left: 25px;
+    background-color: rgb(248, 38, 52);
+    color: #fff;
+    transform: scale(1);
+    border-color: rgb(248, 38, 52);
+    font-weight: 700;
+  }
+
+  /* Ajuste para o barmenu em mobile */
+  #barmenu.is-fixed {
+    top: calc(85% - 75px);
+  }
 }
 
-/* Garantia extra para navegadores */
+/* Telemóveis pequenos */
+@media (max-width: 480px) {
+  /* CORREÇÃO MOBILE PEQUENO */
+  #inicio #inc {
+    padding-top: 65px;
+  }
+  
+  section {
+    scroll-margin-top: 65px;
+  }
+  
+  #cabecalho.scrolled ~ main #inicio #inc {
+    padding-top: 55px;
+  }
+  
+  #cabecalho.scrolled ~ main section {
+    scroll-margin-top: 55px;
+  }
+
+  #cabecalho {
+    padding: 8px 12px;
+    min-height: 60px;
+  }
+
+  #cabecalho.scrolled {
+    padding: 5px 12px;
+    min-height: 50px;
+  }
+
+  #nomemph {
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
+  }
+
+  #logoheader {
+    width: 45px;
+    height: 45px;
+  }
+
+  #cabecalho.scrolled #logoheader {
+    width: 40px;
+    height: 40px;
+  }
+
+  #linkssecoes {
+    width: 85%;
+    max-width: 280px;
+    padding: 70px 15px 20px;
+  }
+
+  #ulsecoes li {
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+/* Orientação paisagem em mobile */
+@media (max-height: 600px) and (max-width: 750px) {
+  #linkssecoes {
+    padding-top: 60px;
+  }
+  
+  #ulsecoes {
+    gap: 8px;
+  }
+  
+  #ulsecoes li {
+    padding: 10px 15px;
+  }
+}
+
+/* Garantias */
 #logoheader,
 #imgl,
 #emp {
@@ -329,7 +467,6 @@ a{
   background-clip: padding-box;
 }
 
-/* Se ainda assim aparecer fundo, usar esta regra de fallback */
 .no-background {
   background-color: transparent !important;
   background-image: none !important;

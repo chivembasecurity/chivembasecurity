@@ -227,6 +227,36 @@
         {
           "@type": "ListItem",
           "position": 3,
+          "name": "MVV",
+          "item": "https://chivemba-security.com/#mvv"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Organograma",
+          "item": "https://chivemba-security.com/#organograma"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Políticas",
+          "item": "https://chivemba-security.com/#politicas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Carreiras",
+          "item": "https://chivemba-security.com/#emprego"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Documentos",
+          "item": "https://chivemba-security.com/#documentos"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
           "name": "Contacto",
           "item": "https://chivemba-security.com/#contact"
         }
@@ -959,7 +989,12 @@
           <li onclick="home(); closeMenu();" role="button" tabindex="0">HOME</li>
           <li onclick="sobre(); closeMenu();" role="button" tabindex="0">SOBRE</li>
           <li onclick="servico(); closeMenu();" role="button" tabindex="0">SERVIÇOS</li>
-          <li onclick="contactar(); closeMenu();" role="button" tabindex="0">Contactar</li>
+          <li onclick="mvv(); closeMenu();" role="button" tabindex="0">MVV</li>
+          <li onclick="organograma(); closeMenu();" role="button" tabindex="0">ORGANOGRAMA</li>
+          <li onclick="politicas(); closeMenu();" role="button" tabindex="0">POLÍTICAS</li>
+          <li onclick="carreiras(); closeMenu();" role="button" tabindex="0">CARREIRAS</li>
+          <li onclick="documentos(); closeMenu();" role="button" tabindex="0">DOCUMENTOS</li>
+          <li onclick="contactar(); closeMenu();" role="button" tabindex="0">CONTACTAR</li>
         </ul>
       </nav>
     </header>
@@ -986,18 +1021,7 @@
 
       <!-- Seção Serviços -->
       <section id="servicos" class="cservicos nav-section">
-        <!-- <div id="header">
-          <center>
-            <div id="barmenu">
-              <span id="h" class="b" onclick="home(); closeMenu();">HOME</span>
-              <span class="b" onclick="sobre(); closeMenu();">SOBRE</span>
-              <span class="b" onclick="servico(); closeMenu();">SERVIÇOS</span>
-              <span id="c" class="b" onclick="contactar(); closeMenu();">CONTACTAR</span>
-            </div>
-          </center>
-          <span>As nossas soluções de segurança</span>
-        </div>
-         --><div id="secservice">
+        <div id="secservice">
           <section class="cardservice">
             <img src="assets/imagens/observation.png" alt="Vigilância patrimonial em Luanda - Chivemba Security" loading="lazy" />
             <span class="tituloserv"> Vigilância </span>
@@ -1636,6 +1660,11 @@
           <span onclick="home(); closeMenu();" role="link" tabindex="0">HOME</span>
           <span onclick="sobre(); closeMenu();" role="link" tabindex="0">SOBRE</span>
           <span onclick="servico(); closeMenu();" role="link" tabindex="0">SERVIÇOS</span>
+          <span onclick="mvv(); closeMenu();" role="link" tabindex="0">MVV</span>
+          <span onclick="organograma(); closeMenu();" role="link" tabindex="0">ORGANOGRAMA</span>
+          <span onclick="politicas(); closeMenu();" role="link" tabindex="0">POLÍTICAS</span>
+          <span onclick="carreiras(); closeMenu();" role="link" tabindex="0">CARREIRAS</span>
+          <span onclick="documentos(); closeMenu();" role="link" tabindex="0">DOCUMENTOS</span>
           <span onclick="contactar(); closeMenu();" role="link" tabindex="0">CONTACTAR</span>
         </span>
         <span class="contatos">
@@ -1674,12 +1703,17 @@
         "contact", "mvv", "organograma", "politicas", "emprego", "documentos"
       ];
 
-      // Mapeamento das seções por menu
+      // Mapeamento das seções por menu - ATUALIZADO com todas as novas opções
       const menuMap = {
         'HOME': ['inicio', 'servicos', 'why', 'mvv', 'organograma'],
         'SOBRE': ['sobre', 'why', 'missao', 'mvv', 'organograma', 'politicas', 'documentos'],
         'SERVIÇOS': ['in', 'allservices', 'contact', 'emprego'],
-        'Contactar': ['contact', 'emprego']
+        'MVV': ['mvv', 'why', 'missao'],
+        'ORGANOGRAMA': ['organograma', 'mvv', 'politicas'],
+        'POLÍTICAS': ['politicas', 'documentos', 'mvv'],
+        'CARREIRAS': ['emprego', 'contact'],
+        'DOCUMENTOS': ['documentos', 'politicas', 'mvv'],
+        'CONTACTAR': ['contact', 'emprego']
       };
 
       function navigateTo(menuItem) {
@@ -1710,7 +1744,12 @@
       function home() { navigateTo('HOME'); }
       function sobre() { navigateTo('SOBRE'); }
       function servico() { navigateTo('SERVIÇOS'); }
-      function contactar() { navigateTo('Contactar'); }
+      function mvv() { navigateTo('MVV'); }
+      function organograma() { navigateTo('ORGANOGRAMA'); }
+      function politicas() { navigateTo('POLÍTICAS'); }
+      function carreiras() { navigateTo('CARREIRAS'); }
+      function documentos() { navigateTo('DOCUMENTOS'); }
+      function contactar() { navigateTo('CONTACTAR'); }
 
       // Função para fechar o menu mobile
       function closeMenu() {
@@ -1718,20 +1757,18 @@
         const linkssecoes = document.getElementById('linkssecoes');
         const menuOverlay = document.getElementById('menuOverlay');
         
-        menuHamburger.classList.remove('active');
-        linkssecoes.classList.remove('active');
-        menuOverlay.classList.remove('active');
+        if (menuHamburger) menuHamburger.classList.remove('active');
+        if (linkssecoes) linkssecoes.classList.remove('active');
+        if (menuOverlay) menuOverlay.classList.remove('active');
         document.body.style.overflow = '';
       }
 
       // Função para download de documentos
       function downloadDocumento(nomeArquivo, titulo) {
-        // Simula download - em produção, usar link real
         alert(`Download iniciado: ${titulo}`);
         
-        // Criar link temporário para download
         const link = document.createElement('a');
-        link.href = `documentos/${nomeArquivo}`; // Caminho real dos documentos
+        link.href = `documentos/${nomeArquivo}`;
         link.download = nomeArquivo;
         document.body.appendChild(link);
         link.click();
@@ -1742,10 +1779,8 @@
 
       // Função para candidatar-se a vaga
       function candidatarVaga(vaga) {
-        // Navegar para seção de contato
         contactar();
         
-        // Pré-selecionar assunto como Recrutamento e preencher mensagem
         setTimeout(() => {
           const subjectSelect = document.getElementById('subject');
           const messageField = document.getElementById('message');
@@ -1758,19 +1793,16 @@
             messageField.value = `Estou interessado na vaga: ${vaga}\n\nSegue em anexo meu currículo para análise.\n\nAtenciosamente,`;
           }
           
-          // Scroll suave para o formulário
           document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }, 500);
       }
 
       // Função para filtrar documentos
       function filtrarDocumentos(categoria, botao) {
-        // Atualizar botão ativo
         const botoes = document.querySelectorAll('.categoria-btn-moderno');
         botoes.forEach(btn => btn.classList.remove('active'));
         botao.classList.add('active');
         
-        // Filtrar documentos
         const documentos = document.querySelectorAll('.documento-item-premium');
         
         documentos.forEach(doc => {
@@ -1787,20 +1819,11 @@
       function enviarFormulario(event) {
         event.preventDefault();
         
-        // Pegar valores do formulário
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        // Simular envio
         const formMessage = document.getElementById('form-message');
         formMessage.innerHTML = '<div class="success-message">Mensagem enviada com sucesso! Entraremos em contato em breve.</div>';
         
-        // Limpar formulário
         document.getElementById('contact-form').reset();
         
-        // Remover mensagem após 5 segundos
         setTimeout(() => {
           formMessage.innerHTML = '';
         }, 5000);
@@ -1817,27 +1840,17 @@
         setTimeout(() => navigateTo('HOME'), 50);
       });
 
-      // Configurar barmenu
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(() => {
-          const barMenuItems = document.querySelectorAll('#barmenu span');
-          barMenuItems.forEach(item => {
-            item.addEventListener('click', function() {
-              const text = this.textContent.toUpperCase();
-              if (text.includes('HOME')) home();
-              else if (text.includes('SOBRE')) sobre();
-              else if (text.includes('SERVIÇOS') || text.includes('SERVICOS')) servico();
-              else if (text.includes('CONTACTAR')) contactar();
-            });
-          });
-        }, 200);
-      });
-
-      // Menu Hamburger
+      // Menu Hamburger - VERSÃO ÚNICA E CORRIGIDA
       document.addEventListener('DOMContentLoaded', function() {
         const menuHamburger = document.getElementById('menuHamburger');
         const linkssecoes = document.getElementById('linkssecoes');
         const menuOverlay = document.getElementById('menuOverlay');
+        const closeMenuFn = function() {
+          menuHamburger.classList.remove('active');
+          linkssecoes.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        };
 
         function toggleMenu() {
           menuHamburger.classList.toggle('active');
@@ -1847,12 +1860,27 @@
         }
 
         if (menuHamburger) menuHamburger.addEventListener('click', toggleMenu);
-        if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+        if (menuOverlay) menuOverlay.addEventListener('click', closeMenuFn);
         
-        // Fechar menu ao redimensionar para desktop
-        window.addEventListener('resize', function() {
-          if (window.innerWidth > 750) closeMenu();
+        // Fechar menu ao clicar num link
+        const menuItems = document.querySelectorAll('#ulsecoes li');
+        menuItems.forEach(item => {
+          item.addEventListener('click', closeMenuFn);
         });
+        
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 750) closeMenuFn();
+        });
+      });
+
+      // Detectar scroll para mudar aparência do header (VERSÃO CORRIGIDA)
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('cabecalho');
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
       });
 
       // Barmenu fixo
@@ -1864,50 +1892,5 @@
         });
       }
     </script>
-    <script>
-  // Detectar scroll para mudar aparência do header
-  window.addEventListener('scroll', function() {
-    const header = document.getElementById('cabecalho');
-    const main = document.querySelector('main');
-    
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-      // Ajustar padding-top do main quando header está reduzido
-      if (window.innerWidth > 750) {
-        main.style.paddingTop = '75px'; // Altura do header reduzido
-      } else {
-        main.style.paddingTop = '65px'; // Altura do header reduzido mobile
-      }
-    } else {
-      header.classList.remove('scrolled');
-      // Restaurar padding-top original
-      if (window.innerWidth > 750) {
-        main.style.paddingTop = '105px'; // Altura original desktop
-      } else if (window.innerWidth > 480) {
-        main.style.paddingTop = '85px'; // Altura original mobile
-      } else {
-        main.style.paddingTop = '75px'; // Altura original mobile pequeno
-      }
-    }
-  });
-
-  // Ajustar padding-top ao redimensionar a janela
-  window.addEventListener('resize', function() {
-    const header = document.getElementById('cabecalho');
-    const main = document.querySelector('main');
-    const isScrolled = window.scrollY > 50;
-    
-    if (window.innerWidth > 750) {
-      main.style.paddingTop = isScrolled ? '75px' : '105px';
-    } else if (window.innerWidth > 480) {
-      main.style.paddingTop = isScrolled ? '65px' : '85px';
-    } else {
-      main.style.paddingTop = isScrolled ? '55px' : '75px';
-    }
-  });
-</script>
   </body>
 </html>
-
-
- SEÇÃO ORGANOGRAMA
