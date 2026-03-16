@@ -134,7 +134,7 @@ a {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* ===== MENU DE NAVEGAÇÃO (DESKTOP) ===== */
+/* ===== MENU DE NAVEGAÇÃO (DESKTOP) - CORRIGIDO ===== */
 #linkssecoes {
   display: flex;
   align-items: center;
@@ -145,7 +145,7 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 4px;
+  gap: 2px;
   flex-wrap: nowrap;
 }
 
@@ -154,27 +154,27 @@ a {
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 8px 12px;
+  padding: 8px 10px;
   font-family: "Manrope", sans-serif;
   font-weight: 600;
   white-space: nowrap;
   border-radius: 30px;
   font-size: 0.9rem;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   text-transform: uppercase;
 }
 
 #ulsecoes li:hover {
   color: rgb(248, 38, 52);
   background-color: rgba(255, 255, 255, 0.15);
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 14px;
+  padding-right: 14px;
   transform: scale(0.98);
   font-weight: 700;
 }
 
 #cabecalho.scrolled #ulsecoes li {
-  padding: 6px 10px;
+  padding: 6px 8px;
   font-size: 0.85rem;
 }
 
@@ -223,17 +223,24 @@ section {
   scroll-margin-top: 70px;
 }
 
-/* ===== MEDIA QUERIES PARA DESKTOP ===== */
-@media (max-width: 1200px) {
+/* ===== MEDIA QUERIES PARA DESKTOP - AJUSTADAS ===== */
+@media (min-width: 1400px) {
   #ulsecoes li {
-    padding: 8px 10px;
+    font-size: 0.95rem;
+    padding: 9px 14px;
+  }
+}
+
+@media (max-width: 1300px) {
+  #ulsecoes li {
+    padding: 7px 8px;
     font-size: 0.85rem;
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   #ulsecoes li {
-    padding: 8px 8px;
+    padding: 6px 7px;
     font-size: 0.8rem;
   }
   
@@ -247,15 +254,33 @@ section {
   }
 }
 
-@media (max-width: 950px) {
-  #ulsecoes {
-    gap: 2px;
-  }
-  
+@media (max-width: 1100px) {
   #ulsecoes li {
-    padding: 6px 6px;
+    padding: 5px 6px;
     font-size: 0.75rem;
   }
+}
+
+@media (max-width: 1000px) {
+  #ulsecoes li {
+    padding: 4px 5px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Versão scrolled com ajustes */
+#cabecalho.scrolled #ulsecoes {
+  gap: 1px;
+}
+
+#cabecalho.scrolled #ulsecoes li {
+  padding: 5px 7px;
+  font-size: 0.8rem;
+}
+
+/* Garantir que o último item nunca suma */
+#ulsecoes li:last-child {
+  margin-right: 0;
 }
 
 /* ===== MOBILE - ATÉ 750px ===== */
@@ -471,85 +496,3 @@ section {
   background-color: transparent !important;
   background-image: none !important;
 }
-/* ===== CORREÇÃO: Garantir que todos os itens do menu fiquem visíveis ===== */
-#ulsecoes {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2px; /* Reduzir gap para caber mais itens */
-  flex-wrap: nowrap;
-}
-
-#ulsecoes li {
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 6px 8px; /* Padding reduzido para caber todos */
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-  white-space: nowrap;
-  border-radius: 30px;
-  font-size: .9rem; /* Fonte ligeiramente menor */
-  letter-spacing: 0.2px;
-  text-transform: uppercase;
-}
-
-#cabecalho.scrolled #ulsecoes li {
-  padding: 4px 6px; /* Ainda menor quando scrolled */
-  font-size: 0.75rem;
-}
-
-/* Ajustes para telas muito largas - manter proporção */
-@media (min-width: 1400px) {
-  #ulsecoes li {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-}
-
-@media (max-width: 1200px) {
-  #ulsecoes li {
-    padding: 6px 6px;
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 1100px) {
-  #ulsecoes {
-    gap: 1px;
-  }
-  
-  #ulsecoes li {
-    padding: 5px 5px;
-    font-size: 0.7rem;
-  }
-}
-
-@media (max-width: 1000px) {
-  #ulsecoes li {
-    padding: 4px 4px;
-    font-size: 0.65rem;
-  }
-}
-
-/* Versão scrolled para garantir que cabe */
-#cabecalho.scrolled #ulsecoes {
-  gap: 1px;
-}
-
-#cabecalho.scrolled #ulsecoes li {
-  padding: 4px 5px;
-  font-size: 0.7rem;
-}
-
-
-
-
-
-
-
-
-
-
