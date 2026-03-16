@@ -471,3 +471,75 @@ section {
   background-color: transparent !important;
   background-image: none !important;
 }
+/* ===== CORREÇÃO: Garantir que todos os itens do menu fiquem visíveis ===== */
+#ulsecoes {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2px; /* Reduzir gap para caber mais itens */
+  flex-wrap: nowrap;
+}
+
+#ulsecoes li {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px 8px; /* Padding reduzido para caber todos */
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 30px;
+  font-size: .9rem; /* Fonte ligeiramente menor */
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+#cabecalho.scrolled #ulsecoes li {
+  padding: 4px 6px; /* Ainda menor quando scrolled */
+  font-size: 0.75rem;
+}
+
+/* Ajustes para telas muito largas - manter proporção */
+@media (min-width: 1400px) {
+  #ulsecoes li {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #ulsecoes li {
+    padding: 6px 6px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  #ulsecoes {
+    gap: 1px;
+  }
+  
+  #ulsecoes li {
+    padding: 5px 5px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  #ulsecoes li {
+    padding: 4px 4px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Versão scrolled para garantir que cabe */
+#cabecalho.scrolled #ulsecoes {
+  gap: 1px;
+}
+
+#cabecalho.scrolled #ulsecoes li {
+  padding: 4px 5px;
+  font-size: 0.7rem;
+}
