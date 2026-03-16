@@ -1337,6 +1337,54 @@
         animation: slideIn 0.5s ease;
       }
     </style>
+
+    <style>
+      /* ÍCONES DE CDNs - NÃO PRECISA BAIXAR NADA */
+.politica-icon-moderno,
+.doc-icon-moderno,
+.vaga-meta-moderno span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.politica-icon-moderno svg,
+.doc-icon-moderno svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: #df2935;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.doc-icon-moderno svg {
+    width: 28px;
+    height: 28px;
+}
+
+.vaga-meta-moderno span svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    margin-right: 4px;
+}
+
+.vaga-tag-moderno {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #df2935;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+    </style>
 </head>
 <body>
     <!-- CONTEÚDO SEO INVISÍVEL COM INFORMAÇÃO DO FUNDADOR -->
@@ -1441,142 +1489,157 @@
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO SOBRE REDESENHADA (UI/UX NÍVEL HARD) -->
-        <section id="sobre-premium" class="about-premium nav-section">
-            <div class="about-container">
-                <div class="about-header">
-                    <span class="about-tag">DESDE 2025 • ANGOLA</span>
-                    <h2>Protegendo o Futuro com Excelência</h2>
-                    <p>Fundada por Almerindo Chivemba, a Chivemba Security nasceu com a missão de elevar os padrões de segurança privada em Angola, combinando experiência, tecnologia de ponta e um profundo compromisso com a proteção de pessoas e património.</p>
+   <!-- NOVA SEÇÃO SOBRE REDESENHADA - SEM EMOJIS, COM SVGs -->
+<section id="sobre-premium" class="about-premium nav-section">
+    <div class="about-container">
+        <div class="about-header">
+            <span class="about-tag">DESDE 2025 • ANGOLA</span>
+            <h2>Protegendo o Futuro com Excelência</h2>
+            <p>Fundada por Almerindo Chivemba, a Chivemba Security nasceu com a missão de elevar os padrões de segurança privada em Angola, combinando experiência, tecnologia de ponta e um profundo compromisso com a proteção de pessoas e património.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                        <path d="M12 2v4"/>
+                    </svg>
                 </div>
-
-                <div class="about-grid">
-                    <div class="about-card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Nossa História</h3>
-                        <p>O que começou como uma visão ousada de Almerindo Chivemba transformou-se na mais respeitada empresa de segurança privada de Luanda. Mais de 1 anos de trajetória marcados pela inovação e excelência.</p>
-                        <div class="card-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">1+</span>
-                                <span class="stat-label">Anos</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">50+</span>
-                                <span class="stat-label">Profissionais</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">10+</span>
-                                <span class="stat-label">Clientes</span>
-                            </div>
-                        </div>
+                <h3>Nossa História</h3>
+                <p>O que começou como uma visão ousada de Almerindo Chivemba transformou-se na mais respeitada empresa de segurança privada de Luanda. Mais de 1 ano de trajetória marcados pela inovação e excelência.</p>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">1+</span>
+                        <span class="stat-label">Anos</span>
                     </div>
-
-                    <div class="about-card">
-                        <div class="card-icon">⚡</div>
-                        <h3>Diferenciais</h3>
-                        <p>Nossa abordagem proativa antecipa ameaças antes que se concretizem. Cada protocolo é meticulosamente desenhado para garantir a máxima eficácia em todas as situações.</p>
-                        <div class="card-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">99.8%</span>
-                                <span class="stat-label">Eficácia</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">&lt;5min</span>
-                                <span class="stat-label">Resposta</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">24/7</span>
-                                <span class="stat-label">Operação</span>
-                            </div>
-                        </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Profissionais</span>
                     </div>
-
-                    <div class="about-card">
-                        <div class="card-icon">🌍</div>
-                        <h3>Presença</h3>
-                        <p>Atuamos em toda a província de Luanda e expandimos nossos serviços para outras regiões de Angola, sempre mantendo o padrão de excelência que nos caracteriza.</p>
-                        <div class="card-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">10+</span>
-                                <span class="stat-label">Municípios</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">100%</span>
-                                <span class="stat-label">Cobertura</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">24h</span>
-                                <span class="stat-label">Suporte</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Seção do Fundador -->
-                <div class="founder-section">
-                    <div class="founder-content">
-                        <span class="founder-label">O FUNDADOR</span>
-                        <h3>Almerindo Chivemba</h3>
-                        <p>Com mais de 5 anos de experiência no setor de segurança, Almerindo Chivemba construiu um legado baseado na integridade, inovação e compromisso inabalável com a excelência. Sua visão transformou a Chivemba Security na referência que é hoje.</p>
-                        <p>Graduado em Gestão de Segurança Privada e com especializações internacionais, Almerindo lidera pessoalmente o desenvolvimento de estratégias e protocolos que garantem a máxima proteção aos clientes.</p>
-                        <div class="founder-quote">
-                            "Segurança não é apenas um serviço, é um compromisso sagrado com a tranquilidade de quem confia em nós. Cada cliente é uma família que nos permite proteger o seu legado."
-                        </div>
-                        <div class="card-stats" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
-                            <div class="stat-item">
-                                <span class="stat-number">5+</span>
-                                <span class="stat-label">Anos de Experiência</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">3</span>
-                                <span class="stat-label">Certificações</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">∞</span>
-                                <span class="stat-label">Compromisso</span>
-                            </div>
-                        </div>
-                    </div>
-                  <div class="founder-image">
-    <div class="image-frame">
-        <img 
-            src="assets/imagens/almerindo.jpeg" 
-            alt="Almerindo Chivemba - Fundador da Chivemba Security"
-            title="Almerindo Chivemba, Fundador da Chivemba Security"
-            style="width: 100%; height: auto; border-radius: 40px; display: block;"
-            loading="lazy"
-        />
-    </div>
-    <div class="experience-badge">
-        <span class="years">5+</span>
-        <span class="text">Anos de<br>Excelência</span>
-    </div>
-</div>
-                  
-                  </div>
-
-                <!-- Métricas de impacto -->
-                <div class="metrics-grid">
-                    <div class="metric-item">
-                        <span class="metric-number">50+</span>
-                        <span class="metric-label">Profissionais</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="metric-number">10+</span>
-                        <span class="metric-label">Clientes Ativos</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="metric-number">1</span>
-                        <span class="metric-label">Anos de Mercado</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="metric-number">100%</span>
-                        <span class="metric-label">Satisfação</span>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Clientes</span>
                     </div>
                 </div>
             </div>
-        </section>
 
+            <div class="about-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>Diferenciais</h3>
+                <p>Nossa abordagem proativa antecipa ameaças antes que se concretizem. Cada protocolo é meticulosamente desenhado para garantir a máxima eficácia em todas as situações.</p>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">99.8%</span>
+                        <span class="stat-label">Eficácia</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">&lt;5min</span>
+                        <span class="stat-label">Resposta</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Operação</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2v20M2 12h20"/>
+                    </svg>
+                </div>
+                <h3>Presença</h3>
+                <p>Atuamos em toda a província de Luanda e expandimos nossos serviços para outras regiões de Angola, sempre mantendo o padrão de excelência que nos caracteriza.</p>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Municípios</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Cobertura</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Suporte</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção do Fundador -->
+        <div class="founder-section">
+            <div class="founder-content">
+                <span class="founder-label">O FUNDADOR</span>
+                <h3>Almerindo Chivemba</h3>
+                <p>Com mais de 5 anos de experiência no setor de segurança, Almerindo Chivemba construiu um legado baseado na integridade, inovação e compromisso inabalável com a excelência. Sua visão transformou a Chivemba Security na referência que é hoje.</p>
+                <p>Graduado em Gestão de Segurança Privada e com especializações internacionais, Almerindo lidera pessoalmente o desenvolvimento de estratégias e protocolos que garantem a máxima proteção aos clientes.</p>
+                <div class="founder-quote">
+                    "Segurança não é apenas um serviço, é um compromisso sagrado com a tranquilidade de quem confia em nós. Cada cliente é uma família que nos permite proteger o seu legado."
+                </div>
+                <div class="card-stats" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Anos de Exp.</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Certificações</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Compromisso</span>
+                    </div>
+                </div>
+            </div>
+            <div class="founder-image">
+                <div class="image-frame">
+                    <img 
+                        src="assets/imagens/almerindo.jpeg" 
+                        alt="Almerindo Chivemba - Fundador da Chivemba Security"
+                        title="Almerindo Chivemba, Fundador da Chivemba Security"
+                        style="width: 100%; height: auto; border-radius: 40px; display: block;"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="experience-badge">
+                    <span class="years">5+</span>
+                    <span class="text">Anos de<br>Excelência</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Métricas de impacto -->
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-number">50+</span>
+                <span class="metric-label">Profissionais</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-number">10+</span>
+                <span class="metric-label">Clientes Ativos</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-number">1</span>
+                <span class="metric-label">Ano de Mercado</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-number">100%</span>
+                <span class="metric-label">Satisfação</span>
+            </div>
+        </div>
+    </div>
+</section>
      <!-- SEÇÃO MVV ATUALIZADA COM OS NOVOS DADOS -->
 <section id="mvv" class="modern-section" style="scroll-margin-top: 100px;">
     <div class="bg-pattern"></div>
@@ -1672,53 +1735,73 @@
         </style>
 
         <!-- SEÇÃO POLÍTICAS MODERNA (mantida original) -->
-        <section id="politicas" class="modern-section">
-            <h2 class="modern-section-title">Políticas de Qualidade</h2>
-            <p class="modern-section-subtitle">O nosso compromisso com a excelência e a melhoria contínua</p>
-
-            <div class="politicas-grid-moderno">
-                <div class="politica-card-moderno">
-                    <div class="politica-icon-moderno">📋</div>
-                    <h3>Política de Qualidade</h3>
-                    <p>Compromisso com os mais altos padrões de qualidade através da melhoria contínua dos processos e capacitação dos colaboradores.</p>
-                    <a href="#" class="btn-download-moderno" onclick="downloadDocumento('politica_qualidade.pdf', 'Política de Qualidade')" aria-label="Download Política de Qualidade">
-                        <span>Download PDF</span>
-                        <span>→</span>
-                    </a>
-                </div>
-
-                <div class="politica-card-moderno">
-                    <div class="politica-icon-moderno">🛡️</div>
-                    <h3>Política de Segurança</h3>
-                    <p>Protocolos rigorosos, equipamentos modernos e equipa treinada para atuar com eficiência em todas as situações.</p>
-                    <a href="#" class="btn-download-moderno" onclick="downloadDocumento('politica_seguranca.pdf', 'Política de Segurança')" aria-label="Download Política de Segurança">
-                        <span>Download PDF</span>
-                        <span>→</span>
-                    </a>
-                </div>
-
-                <div class="politica-card-moderno">
-                    <div class="politica-icon-moderno">🌱</div>
-                    <h3>Política Ambiental</h3>
-                    <p>Compromisso com a sustentabilidade, adotando práticas que minimizam impactos ambientais.</p>
-                    <a href="#" class="btn-download-moderno" onclick="downloadDocumento('politica_ambiental.pdf', 'Política Ambiental')" aria-label="Download Política Ambiental">
-                        <span>Download PDF</span>
-                        <span>→</span>
-                    </a>
-                </div>
-
-                <div class="politica-card-moderno">
-                    <div class="politica-icon-moderno">⚖️</div>
-                    <h3>Código de Ética</h3>
-                    <p>Ações guiadas por princípios éticos, integridade e transparência em todas as relações.</p>
-                    <a href="#" class="btn-download-moderno" onclick="downloadDocumento('codigo_etica.pdf', 'Código de Ética')" aria-label="Download Código de Ética">
-                        <span>Download PDF</span>
-                        <span>→</span>
-                    </a>
-                </div>
+     <!-- SEÇÃO POLÍTICAS MODERNA - COM SVGs DO CDN -->
+<section id="politicas" class="modern-section">
+    <h2 class="modern-section-title">Políticas de Qualidade</h2>
+    <p class="modern-section-subtitle">O nosso compromisso com a excelência e a melhoria contínua</p>
+    
+    <div class="politicas-grid-moderno">
+        <div class="politica-card-moderno">
+            <div class="politica-icon-moderno">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L2 7v10l10 5 10-5V7l-10-5z"/>
+                    <path d="M2 7l10 5 10-5M12 22V12"/>
+                </svg>
             </div>
-        </section>
+            <h3>Política de Qualidade</h3>
+            <p>Compromisso com os mais altos padrões de qualidade através da melhoria contínua dos processos e capacitação dos colaboradores.</p>
+            <a href="#" class="btn-download-moderno" onclick="downloadDocumento('politica_qualidade.pdf', 'Política de Qualidade')" aria-label="Download Política de Qualidade">
+                <span>Download PDF</span>
+                <span>→</span>
+            </a>
+        </div>
 
+        <div class="politica-card-moderno">
+            <div class="politica-icon-moderno">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+            </div>
+            <h3>Política de Segurança</h3>
+            <p>Protocolos rigorosos, equipamentos modernos e equipa treinada para atuar com eficiência em todas as situações.</p>
+            <a href="#" class="btn-download-moderno" onclick="downloadDocumento('politica_seguranca.pdf', 'Política de Segurança')" aria-label="Download Política de Segurança">
+                <span>Download PDF</span>
+                <span>→</span>
+            </a>
+        </div>
+
+        <div class="politica-card-moderno">
+            <div class="politica-icon-moderno">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2v20M2 12h20M4 4l16 16M20 4L4 20"/>
+                    <circle cx="12" cy="12" r="2"/>
+                </svg>
+            </div>
+            <h3>Política Ambiental</h3>
+            <p>Compromisso com a sustentabilidade, adotando práticas que minimizam impactos ambientais.</p>
+            <a href="#" class="btn-download-moderno" onclick="downloadDocumento('politica_ambiental.pdf', 'Política Ambiental')" aria-label="Download Política Ambiental">
+                <span>Download PDF</span>
+                <span>→</span>
+            </a>
+        </div>
+
+        <div class="politica-card-moderno">
+            <div class="politica-icon-moderno">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 12H4M12 4v16M4 4l16 16M20 4L4 20"/>
+                    <circle cx="12" cy="12" r="2"/>
+                </svg>
+            </div>
+            <h3>Código de Ética</h3>
+            <p>Ações guiadas por princípios éticos, integridade e transparência em todas as relações.</p>
+            <a href="#" class="btn-download-moderno" onclick="downloadDocumento('codigo_etica.pdf', 'Código de Ética')" aria-label="Download Código de Ética">
+                <span>Download PDF</span>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+</section>
         <!-- SEÇÃO VAGAS MODERNA (mantida original) -->
         <section id="emprego" class="modern-section">
             <h2 class="modern-section-title">Trabalhe Connosco</h2>
@@ -1769,76 +1852,108 @@
         </section>
 
         <!-- SEÇÃO DOCUMENTOS MODERNA (mantida original) -->
-        <section id="documentos" class="modern-section">
-            <h2 class="modern-section-title">Documentos Institucionais</h2>
-            <p class="modern-section-subtitle">Aceda às nossas políticas, manuais e documentos oficiais</p>
+  <!-- SEÇÃO DOCUMENTOS MODERNA - COM SVGs DO CDN -->
+<section id="documentos" class="modern-section">
+    <h2 class="modern-section-title">Documentos Institucionais</h2>
+    <p class="modern-section-subtitle">Aceda às nossas políticas, manuais e documentos oficiais</p>
+    
+    <div class="documentos-showcase-moderno">
+        <div class="documentos-categorias-moderno">
+            <button class="categoria-btn-moderno active" onclick="filtrarDocumentos('todos', this)">Todos</button>
+            <button class="categoria-btn-moderno" onclick="filtrarDocumentos('politicas', this)">Políticas</button>
+            <button class="categoria-btn-moderno" onclick="filtrarDocumentos('manuais', this)">Manuais</button>
+            <button class="categoria-btn-moderno" onclick="filtrarDocumentos('relatorios', this)">Relatórios</button>
+        </div>
 
-            <div class="documentos-showcase-moderno">
-                <div class="documentos-categorias-moderno">
-                    <button class="categoria-btn-moderno active" onclick="filtrarDocumentos('todos', this)" aria-label="Filtrar todos os documentos">Todos</button>
-                    <button class="categoria-btn-moderno" onclick="filtrarDocumentos('politicas', this)" aria-label="Filtrar políticas">Políticas</button>
-                    <button class="categoria-btn-moderno" onclick="filtrarDocumentos('manuais', this)" aria-label="Filtrar manuais">Manuais</button>
-                    <button class="categoria-btn-moderno" onclick="filtrarDocumentos('relatorios', this)" aria-label="Filtrar relatórios">Relatórios</button>
+        <div class="documentos-grid-moderno" id="documentos-grid">
+            <div class="documento-item-premium" data-categoria="politicas">
+                <div class="doc-icon-moderno">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                        <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                    </svg>
                 </div>
-
-                <div class="documentos-grid-moderno" id="documentos-grid">
-                    <div class="documento-item-premium" data-categoria="politicas">
-                        <div class="doc-icon-moderno">📋</div>
-                        <div class="doc-info-moderno">
-                            <h4>Política de Qualidade</h4>
-                            <p>PDF • 245 KB</p>
-                        </div>
-                        <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_qualidade.pdf', 'Política de Qualidade')" aria-label="Download Política de Qualidade">↓</a>
-                    </div>
-
-                    <div class="documento-item-premium" data-categoria="manuais">
-                        <div class="doc-icon-moderno">🛡️</div>
-                        <div class="doc-info-moderno">
-                            <h4>Manual de Procedimentos</h4>
-                            <p>PDF • 1.2 MB</p>
-                        </div>
-                        <a href="#" class="download-link-premium" onclick="downloadDocumento('manual_procedimentos.pdf', 'Manual de Procedimentos')" aria-label="Download Manual de Procedimentos">↓</a>
-                    </div>
-
-                    <div class="documento-item-premium" data-categoria="politicas">
-                        <div class="doc-icon-moderno">🌱</div>
-                        <div class="doc-info-moderno">
-                            <h4>Política Ambiental</h4>
-                            <p>PDF • 180 KB</p>
-                        </div>
-                        <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_ambiental.pdf', 'Política Ambiental')" aria-label="Download Política Ambiental">↓</a>
-                    </div>
-
-                    <div class="documento-item-premium" data-categoria="politicas">
-                        <div class="doc-icon-moderno">⚖️</div>
-                        <div class="doc-info-moderno">
-                            <h4>Código de Ética</h4>
-                            <p>PDF • 320 KB</p>
-                        </div>
-                        <a href="#" class="download-link-premium" onclick="downloadDocumento('codigo_etica.pdf', 'Código de Ética')" aria-label="Download Código de Ética">↓</a>
-                    </div>
-
-                    <div class="documento-item-premium" data-categoria="relatorios">
-                        <div class="doc-icon-moderno">📊</div>
-                        <div class="doc-info-moderno">
-                            <h4>Relatório de Sustentabilidade</h4>
-                            <p>PDF • 850 KB</p>
-                        </div>
-                        <a href="#" class="download-link-premium" onclick="downloadDocumento('relatorio_sustentabilidade.pdf', 'Relatório de Sustentabilidade')" aria-label="Download Relatório de Sustentabilidade">↓</a>
-                    </div>
-
-                    <div class="documento-item-premium" data-categoria="politicas">
-                        <div class="doc-icon-moderno">👥</div>
-                        <div class="doc-info-moderno">
-                            <h4>Política de RH</h4>
-                            <p>PDF • 420 KB</p>
-                        </div>
-                        <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_rh.pdf', 'Política de RH')" aria-label="Download Política de RH">↓</a>
-                    </div>
+                <div class="doc-info-moderno">
+                    <h4>Política de Qualidade</h4>
+                    <p>PDF • 245 KB</p>
                 </div>
+                <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_qualidade.pdf', 'Política de Qualidade')">↓</a>
             </div>
-        </section>
 
+            <div class="documento-item-premium" data-categoria="manuais">
+                <div class="doc-icon-moderno">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        <path d="M8 7h8M8 11h6M8 15h4"/>
+                    </svg>
+                </div>
+                <div class="doc-info-moderno">
+                    <h4>Manual de Procedimentos</h4>
+                    <p>PDF • 1.2 MB</p>
+                </div>
+                <a href="#" class="download-link-premium" onclick="downloadDocumento('manual_procedimentos.pdf', 'Manual de Procedimentos')">↓</a>
+            </div>
+
+            <div class="documento-item-premium" data-categoria="politicas">
+                <div class="doc-icon-moderno">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                        <path d="M14 2v6h6M12 18v-4M12 9v.01"/>
+                    </svg>
+                </div>
+                <div class="doc-info-moderno">
+                    <h4>Política Ambiental</h4>
+                    <p>PDF • 180 KB</p>
+                </div>
+                <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_ambiental.pdf', 'Política Ambiental')">↓</a>
+            </div>
+
+            <div class="documento-item-premium" data-categoria="politicas">
+                <div class="doc-icon-moderno">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                        <path d="M14 2v6h6M9 15h6M9 11h6M9 19h4"/>
+                    </svg>
+                </div>
+                <div class="doc-info-moderno">
+                    <h4>Código de Ética</h4>
+                    <p>PDF • 320 KB</p>
+                </div>
+                <a href="#" class="download-link-premium" onclick="downloadDocumento('codigo_etica.pdf', 'Código de Ética')">↓</a>
+            </div>
+
+            <div class="documento-item-premium" data-categoria="relatorios">
+                <div class="doc-icon-moderno">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                        <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                        <path d="M8 21v-4M16 21v-4"/>
+                    </svg>
+                </div>
+                <div class="doc-info-moderno">
+                    <h4>Relatório de Sustentabilidade</h4>
+                    <p>PDF • 850 KB</p>
+                </div>
+                <a href="#" class="download-link-premium" onclick="downloadDocumento('relatorio_sustentabilidade.pdf', 'Relatório de Sustentabilidade')">↓</a>
+            </div>
+
+            <div class="documento-item-premium" data-categoria="politicas">
+                <div class="doc-icon-moderno">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                        <path d="M14 2v6h6M8 15h8M8 11h8M8 19h4"/>
+                    </svg>
+                </div>
+                <div class="doc-info-moderno">
+                    <h4>Política de RH</h4>
+                    <p>PDF • 420 KB</p>
+                </div>
+                <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_rh.pdf', 'Política de RH')">↓</a>
+            </div>
+        </div>
+    </div>
+</section>
      
         <section id="why" class="swhy nav-section">
             <div id="w">
@@ -2335,5 +2450,8 @@
 </body>
 </html>
 
-<section id="mvv" class="modern-section">
- 
+<section id="politicas" class="modern-section">
+ <section id="documentos" class="modern-section">
+   <section id="emprego" class="modern-section">
+
+    <section id="sobre-premium" class="about-premium nav-section">
