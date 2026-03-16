@@ -1385,6 +1385,316 @@
     letter-spacing: 0.5px;
 }
     </style>
+
+    <style>
+  /* BLOG PREMIUM - CORRIGIDO */
+  .blog-premium {
+    padding: 80px 5%;
+    background: #f8fafc;
+    position: relative;
+    overflow: hidden;
+    scroll-margin-top: 100px;
+  }
+
+  .blog-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 0% 0%, rgba(223, 41, 53, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .blog-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .blog-tag {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(223, 41, 53, 0.1);
+    border-radius: 50px;
+    color: #df2935;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .blog-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  .blog-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  /* Card com imagem */
+  .blog-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: fit-content;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .blog-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  /* CORREÇÃO: Imagem ocupa toda altura */
+  .blog-card.featured .blog-image {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .blog-card.featured .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(223, 41, 53, 0.2);
+  }
+
+  .blog-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+  }
+
+  .blog-card:hover .blog-image img {
+    transform: scale(1.05);
+  }
+
+  .blog-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #df2935;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+  }
+
+  .blog-content {
+    padding: 25px;
+  }
+
+  .blog-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+
+  .blog-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .blog-meta svg {
+    width: 16px;
+    height: 16px;
+    stroke: #df2935;
+  }
+
+  .blog-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .blog-content p {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  .blog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #df2935;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.3s;
+  }
+
+  .blog-link:hover {
+    gap: 12px;
+  }
+
+  /* Card sem imagem */
+  .blog-card.minimal {
+    background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+    border: 1px dashed rgba(223, 41, 53, 0.2);
+  }
+
+  .blog-card.minimal .blog-content {
+    padding: 30px;
+  }
+
+  .blog-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(223, 41, 53, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .blog-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: #df2935;
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* Newsletter */
+  .blog-newsletter {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 40px;
+    padding: 60px;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 40px;
+    color: white;
+  }
+
+  .newsletter-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .newsletter-content p {
+    color: #94a3b8;
+    line-height: 1.6;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .newsletter-form input::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .newsletter-form button {
+    padding: 15px 30px;
+    background: #df2935;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+
+  .newsletter-form button:hover {
+    background: #b71c1c;
+  }
+
+  /* Responsivo */
+  @media (max-width: 1024px) {
+    .blog-card.featured {
+      grid-column: span 1;
+      grid-template-columns: 1fr;
+    }
+    
+    .blog-card.featured .blog-image {
+      height: 220px; /* Altura fixa no mobile */
+    }
+    
+    .blog-newsletter {
+      grid-template-columns: 1fr;
+      padding: 40px;
+    }
+    
+    .newsletter-form {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .blog-newsletter {
+      padding: 30px;
+    }
+    
+    .newsletter-form button {
+      width: 100%;
+    }
+  }
+</style>
+
 </head>
 <body>
     <!-- CONTEÚDO SEO INVISÍVEL COM INFORMAÇÃO DO FUNDADOR -->
@@ -1421,6 +1731,7 @@
                 <li onclick="politicas(); closeMenu();" role="button" tabindex="0">POLÍTICAS</li>
                 <li onclick="carreiras(); closeMenu();" role="button" tabindex="0">CARREIRAS</li>
                 <li onclick="documentos(); closeMenu();" role="button" tabindex="0">DOCUMENTOS</li>
+                <li onclick="blog(); closeMenu();" role="button" tabindex="0">BLOG</li>
                 <li onclick="contactar(); closeMenu();" role="button" tabindex="0">CONTACTAR</li>
             </ul>
         </nav>
@@ -1639,6 +1950,160 @@
             </div>
         </div>
     </div>
+</section>
+
+<section id="blog" class="blog-premium nav-section">
+  <div class="blog-container">
+    <div class="blog-header">
+      <span class="blog-tag" style="margin-top: 1.5rem;">BLOG & NOVIDADES</span>
+      <h2>Últimas do Mundo da Segurança</h2>
+      <p>Fique por dentro das tendências, dicas e novidades do setor</p>
+    </div>
+
+    <div class="blog-grid">
+   <!-- Post 1 - Destaque com imagem (CORRIGIDO) -->
+<div class="blog-card featured">
+    <div class="blog-image">
+        <img src="https://placehold.co/800x600/1e293b/df2935?text=CFTV+IA&font=manrope" alt="Segurança eletrónica">
+        <span class="blog-category">Tecnologia</span>
+    </div>
+    <div class="blog-content">
+        <div class="blog-meta">
+            <span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                15 Mar 2025
+            </span>
+            <span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Ana Silva
+            </span>
+        </div>
+        <h3>CFTV com IA: Como a inteligência artificial está a revolucionar a vigilância</h3>
+        <p>Sistemas modernos já identificam comportamentos suspeitos em tempo real, reduzindo falsos alarmes em até 70%.</p>
+        <a href="#" class="blog-link" onclick="return false;">
+            Ler artigo completo
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<!-- Post 3 - Com imagem (CORRIGIDO) -->
+<div class="blog-card">
+    <div class="blog-image">
+        <img src="https://placehold.co/800x600/0f172a/df2935?text=Escolta+Armada&font=manrope" alt="Escolta armada">
+        <span class="blog-category">Operações</span>
+    </div>
+    <div class="blog-content">
+        <div class="blog-meta">
+            <span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                10 Mar 2025
+            </span>
+        </div>
+        <h3>Procedimentos de escolta armada: o que nunca te contaram</h3>
+        <p>Conheça os protocolos rigorosos que garantem a segurança em transportes de valores e executivos.</p>
+        <a href="#" class="blog-link" onclick="return false;">
+            Ler mais →
+        </a>
+    </div>
+</div>
+      <!-- Post 2 - Sem imagem, minimalista -->
+      <div class="blog-card minimal">
+        <div class="blog-content">
+          <div class="blog-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="blog-meta">
+            <span>12 Mar 2025</span>
+            <span>Departamento Jurídico</span>
+          </div>
+          <h3>Nova Lei da Segurança Privada: o que muda para as empresas</h3>
+          <p>Conheça as principais alterações legislativas e como se adequar às novas exigências até ao final do ano.</p>
+          <a href="#" class="blog-link" onclick="return false;">
+            Saber mais →
+          </a>
+        </div>
+      </div>
+
+      <!-- Post 3 - Com imagem -->
+      <div class="blog-card">
+        <div class="blog-image">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format" alt="Escolta armada">
+          <span class="blog-category">Operações</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span>10 Mar 2025</span>
+          </div>
+          <h3>Procedimentos de escolta armada: o que nunca te contaram</h3>
+          <p>Conheça os protocolos rigorosos que garantem a segurança em transportes de valores e executivos.</p>
+          <a href="#" class="blog-link" onclick="return false;">
+            Ler mais →
+          </a>
+        </div>
+      </div>
+
+      <!-- Post 4 - Sem imagem, dica rápida -->
+      <div class="blog-card minimal">
+        <div class="blog-content">
+          <div class="blog-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div class="blog-meta">
+            <span>8 Mar 2025</span>
+            <span>Dica Rápida</span>
+          </div>
+          <h3>5 sinais de que a sua empresa precisa de uma auditoria de segurança</h3>
+          <p>Identifique vulnerabilidades antes que se tornem problemas. Um checklist essencial para gestores.</p>
+          <a href="#" class="blog-link" onclick="return false;">
+            Ver lista →
+          </a>
+        </div>
+      </div>
+    </div>
+<div class="blog-newsletter">
+  <div class="newsletter-content">
+    <h3>Receba novidades no seu email</h3>
+    <p>Insights, tendências e conteúdos exclusivos sobre segurança privada em Angola.</p>
+  </div>
+  
+  <!-- FORMULÁRIO NEWSLETTER COM FORMSUBMIT -->
+  <form class="newsletter-form" action="https://formsubmit.co/dg@chivemba-security.com" method="POST">
+    <input type="email" name="email" placeholder="O seu melhor email" required>
+    
+    <!-- Campos ocultos do FormSubmit -->
+    <input type="hidden" name="_subject" value="Nova subscrição newsletter - Chivemba Security">
+    <input type="hidden" name="_next" value="https://chivemba-security.com/">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_autoresponse" value="Obrigado por subscrever a newsletter da Chivemba Security! Em breve receberá novidades e insights exclusivos sobre segurança privada em Angola.">
+    <input type="text" name="_honey" style="display:none">
+    
+    <!-- Campo para identificar que é newsletter -->
+    <input type="hidden" name="tipo" value="newsletter">
+    
+    <button type="submit">Subscrever</button>
+  </form>
+</div>
+  </div>
 </section>
      <!-- SEÇÃO MVV ATUALIZADA COM OS NOVOS DADOS -->
 <section id="mvv" class="modern-section" style="scroll-margin-top: 100px;">
@@ -2166,47 +2631,7 @@
         </section>
 
         <!-- JavaScript para feedback sem redirecionar -->
-        <script>
-            const form = document.getElementById('contact-form');
-
-            if (form) {
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-
-                    const formData = new FormData(form);
-
-                    try {
-                        const response = await fetch(form.action, {
-                            method: 'POST',
-                            body: formData,
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
-
-                        if (response.ok) {
-                            document.getElementById('form-message').innerHTML =
-                                '<div class="success-message">✓ Mensagem enviada com sucesso! Entraremos em contato em breve.</div>';
-                            form.reset();
-
-                            setTimeout(() => {
-                                document.getElementById('form-message').innerHTML = '';
-                            }, 5000);
-                        } else {
-                            throw new Error('Erro no envio');
-                        }
-                    } catch (error) {
-                        document.getElementById('form-message').innerHTML =
-                            '<div class="error-message">✗ Erro ao enviar. Tente novamente ou ligue para +244 958 153 255 ou +244 927 337 387.</div>';
-
-                        setTimeout(() => {
-                            document.getElementById('form-message').innerHTML = '';
-                        }, 5000);
-                    }
-                });
-            }
-        </script>
-    </main>
+     </main>
 
     <footer>
         <section class="acesso">
@@ -2252,201 +2677,6 @@
         </section>
     </footer>
 
-    <script>
-        // Todas as seções (incluindo a nova seção sobre-premium)
-      const sections = [
-    "inicio", "servicos", "why", "missao", "in", "allservices", 
-    "contact", "mvv", "organograma", "politicas", "emprego", "documentos", "sobre-premium"
-];
-        // Mapeamento das seções por menu - ATUALIZADO com a nova seção
-        const menuMap = {
-            'HOME': ['inicio', 'servicos', 'why', 'mvv', 'organograma'],
-            'SOBRE': ['sobre-premium', 'why', 'missao', 'mvv', 'organograma', 'politicas', 'documentos'],
-            'SERVIÇOS': ['in', 'allservices', 'contact', 'emprego'],
-            'MVV': ['mvv', 'why', 'missao'],
-            'ORGANOGRAMA': ['organograma', 'mvv', 'politicas'],
-            'POLÍTICAS': ['politicas', 'documentos', 'mvv'],
-            'CARREIRAS': ['emprego', 'contact'],
-            'DOCUMENTOS': ['documentos', 'politicas', 'mvv'],
-            'CONTACTAR': ['contact', 'emprego']
-        };
-
-        function navigateTo(menuItem) {
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (section) section.style.display = 'none';
-            });
-
-            const sectionsToShow = menuMap[menuItem];
-            if (sectionsToShow) {
-                sectionsToShow.forEach(sectionId => {
-                    const section = document.getElementById(sectionId);
-                    if (section) section.style.display = 'block';
-                });
-
-                if (sectionsToShow.length > 0) {
-                    setTimeout(() => {
-                        const firstSection = document.getElementById(sectionsToShow[0]);
-                        if (firstSection) {
-                            firstSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }, 100);
-                }
-            }
-            closeMenu();
-        }
-
-        function home() { navigateTo('HOME'); }
-        function sobre() { navigateTo('SOBRE'); }
-        function servico() { navigateTo('SERVIÇOS'); }
-        function mvv() { navigateTo('MVV'); }
-        function organograma() { navigateTo('ORGANOGRAMA'); }
-        function politicas() { navigateTo('POLÍTICAS'); }
-        function carreiras() { navigateTo('CARREIRAS'); }
-        function documentos() { navigateTo('DOCUMENTOS'); }
-        function contactar() { navigateTo('CONTACTAR'); }
-
-        // Função para fechar o menu mobile
-        function closeMenu() {
-            const menuHamburger = document.getElementById('menuHamburger');
-            const linkssecoes = document.getElementById('linkssecoes');
-            const menuOverlay = document.getElementById('menuOverlay');
-
-            if (menuHamburger) menuHamburger.classList.remove('active');
-            if (linkssecoes) linkssecoes.classList.remove('active');
-            if (menuOverlay) menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Função para download de documentos
-        function downloadDocumento(nomeArquivo, titulo) {
-            alert(`Download iniciado: ${titulo}`);
-
-            const link = document.createElement('a');
-            link.href = `documentos/${nomeArquivo}`;
-            link.download = nomeArquivo;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            return false;
-        }
-
-        // Função para candidatar-se a vaga
-        function candidatarVaga(vaga) {
-            contactar();
-
-            setTimeout(() => {
-                const subjectSelect = document.getElementById('subject');
-                const messageField = document.getElementById('message');
-
-                if (subjectSelect) {
-                    subjectSelect.value = 'recrutamento';
-                }
-
-                if (messageField) {
-                    messageField.value = `Estou interessado na vaga: ${vaga}\n\nSegue em anexo meu currículo para análise.\n\nAtenciosamente,`;
-                }
-
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            }, 500);
-        }
-
-        // Função para filtrar documentos
-        function filtrarDocumentos(categoria, botao) {
-            const botoes = document.querySelectorAll('.categoria-btn-moderno');
-            botoes.forEach(btn => btn.classList.remove('active'));
-            botao.classList.add('active');
-
-            const documentos = document.querySelectorAll('.documento-item-premium');
-
-            documentos.forEach(doc => {
-                if (categoria === 'todos') {
-                    doc.style.display = 'flex';
-                } else {
-                    const docCategoria = doc.getAttribute('data-categoria');
-                    doc.style.display = docCategoria === categoria ? 'flex' : 'none';
-                }
-            });
-        }
-
-        // Função para enviar formulário
-        function enviarFormulario(event) {
-            event.preventDefault();
-
-            const formMessage = document.getElementById('form-message');
-            formMessage.innerHTML = '<div class="success-message">Mensagem enviada com sucesso! Entraremos em contato em breve.</div>';
-
-            document.getElementById('contact-form').reset();
-
-            setTimeout(() => {
-                formMessage.innerHTML = '';
-            }, 5000);
-
-            return false;
-        }
-
-        // Inicialização
-        window.addEventListener('DOMContentLoaded', () => {
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (section) section.style.display = 'none';
-            });
-            setTimeout(() => navigateTo('HOME'), 50);
-        });
-
-        // Menu Hamburger - VERSÃO ÚNICA E CORRIGIDA
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuHamburger = document.getElementById('menuHamburger');
-            const linkssecoes = document.getElementById('linkssecoes');
-            const menuOverlay = document.getElementById('menuOverlay');
-            const closeMenuFn = function() {
-                menuHamburger.classList.remove('active');
-                linkssecoes.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            };
-
-            function toggleMenu() {
-                menuHamburger.classList.toggle('active');
-                linkssecoes.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-                document.body.style.overflow = linkssecoes.classList.contains('active') ? 'hidden' : '';
-            }
-
-            if (menuHamburger) menuHamburger.addEventListener('click', toggleMenu);
-            if (menuOverlay) menuOverlay.addEventListener('click', closeMenuFn);
-
-            // Fechar menu ao clicar num link
-            const menuItems = document.querySelectorAll('#ulsecoes li');
-            menuItems.forEach(item => {
-                item.addEventListener('click', closeMenuFn);
-            });
-
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 750) closeMenuFn();
-            });
-        });
-
-        // Detectar scroll para mudar aparência do header (VERSÃO CORRIGIDA)
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('cabecalho');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Barmenu fixo
-        const barmenu = document.getElementById('barmenu');
-        if (barmenu) {
-            const offsetTop = barmenu.offsetTop;
-            window.addEventListener('scroll', () => {
-                barmenu.classList.toggle('is-fixed', window.scrollY >= offsetTop);
-            });
-        }
-    </script>
     <!-- BOLINHA FLUTUANTE DO WHATSAPP -->
 <style>
   .whatsapp-float {
@@ -2546,5 +2776,273 @@
     <path d="M19.077 4.928C17.191 3.041 14.683 2 12.006 2 6.798 2 2.537 6.193 2.523 11.396c-.004 1.76.44 3.482 1.286 5.002L2 22l5.666-1.766c1.464.792 3.112 1.218 4.796 1.22h.004c5.204 0 9.47-4.197 9.484-9.404.007-2.511-.964-4.869-2.873-6.722zM12.02 20.255h-.003c-1.488 0-2.95-.4-4.21-1.155l-.302-.18-3.36 1.048 1.076-3.28-.19-.31c-.813-1.323-1.244-2.85-1.241-4.411.011-4.374 3.564-7.928 7.95-7.928 2.124 0 4.12.83 5.62 2.336 1.5 1.505 2.323 3.505 2.318 5.629-.012 4.37-3.565 7.925-7.938 7.925zm4.352-5.904c-.238-.119-1.41-.696-1.628-.775-.218-.08-.377-.119-.536.119-.159.238-.615.775-.754.934-.139.159-.278.179-.516.06-.238-.119-1.005-.37-1.914-1.18-.707-.63-1.185-1.41-1.324-1.648-.139-.238-.015-.366.105-.484.108-.107.238-.278.357-.417.119-.139.159-.238.238-.397.08-.159.04-.298-.02-.417-.06-.119-.536-1.291-.735-1.767-.193-.463-.39-.401-.536-.408-.139-.007-.298-.007-.456-.007-.159 0-.417.06-.635.298-.218.238-.834.815-.834 1.987 0 1.172.853 2.304.973 2.463.119.159 1.66 2.545 4.026 3.47.562.22 1.001.351 1.344.45.565.164 1.079.141 1.485.086.453-.062 1.395-.57 1.591-1.12.196-.55.196-1.021.137-1.12-.059-.099-.218-.159-.457-.278z"/>
   </svg>
 </a>
+
+
+<script>
+    // ===== TODAS AS SEÇÕES DO SITE =====
+    const sections = [
+        "inicio", "servicos", "why", "missao", "in", "allservices", 
+        "contact", "mvv", "organograma", "politicas", "emprego", 
+        "documentos", "sobre-premium", "blog"
+    ];
+
+    // ===== MAPEAMENTO DO MENU =====
+    const menuMap = {
+        'HOME': ['inicio', 'servicos', 'why', 'mvv', 'organograma'],
+        'SOBRE': ['sobre-premium', 'why', 'missao', 'mvv', 'organograma', 'politicas', 'documentos', 'blog'],
+        'SERVIÇOS': ['in', 'allservices', 'contact', 'emprego'],
+        'MVV': ['mvv', 'why', 'missao'],
+        'ORGANOGRAMA': ['organograma', 'mvv', 'politicas'],
+        'POLÍTICAS': ['politicas', 'documentos', 'mvv'],
+        'CARREIRAS': ['emprego', 'contact'],
+        'DOCUMENTOS': ['documentos', 'politicas', 'mvv'],
+        'BLOG': ['blog', 'emprego', 'contact'],
+        'CONTACTAR': ['contact', 'emprego']
+    };
+
+    // ===== FUNÇÃO PRINCIPAL DE NAVEGAÇÃO =====
+    function navigateTo(menuItem) {
+        sections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) section.style.display = 'none';
+        });
+
+        const sectionsToShow = menuMap[menuItem];
+        if (sectionsToShow) {
+            sectionsToShow.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) section.style.display = 'block';
+            });
+
+            if (sectionsToShow.length > 0) {
+                setTimeout(() => {
+                    const firstSection = document.getElementById(sectionsToShow[0]);
+                    if (firstSection) {
+                        firstSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+        }
+        closeMenu();
+    }
+
+    // ===== FUNÇÕES DE NAVEGAÇÃO DO MENU =====
+    function home() { navigateTo('HOME'); }
+    function sobre() { navigateTo('SOBRE'); }
+    function servico() { navigateTo('SERVIÇOS'); }
+    function mvv() { navigateTo('MVV'); }
+    function organograma() { navigateTo('ORGANOGRAMA'); }
+    function politicas() { navigateTo('POLÍTICAS'); }
+    function carreiras() { navigateTo('CARREIRAS'); }
+    function documentos() { navigateTo('DOCUMENTOS'); }
+    function blog() { navigateTo('BLOG'); }
+    function contactar() { navigateTo('CONTACTAR'); }
+
+    // ===== FECHAR MENU MOBILE =====
+    function closeMenu() {
+        const menuHamburger = document.getElementById('menuHamburger');
+        const linkssecoes = document.getElementById('linkssecoes');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        if (menuHamburger) menuHamburger.classList.remove('active');
+        if (linkssecoes) linkssecoes.classList.remove('active');
+        if (menuOverlay) menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // ===== DOWNLOAD DE DOCUMENTOS =====
+    function downloadDocumento(nomeArquivo, titulo) {
+        alert(`Download iniciado: ${titulo}`);
+        const link = document.createElement('a');
+        link.href = `documentos/${nomeArquivo}`;
+        link.download = nomeArquivo;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        return false;
+    }
+
+    // ===== CANDIDATAR-SE A VAGA =====
+    function candidatarVaga(vaga) {
+        contactar();
+        setTimeout(() => {
+            const subjectSelect = document.getElementById('subject');
+            const messageField = document.getElementById('message');
+            
+            if (subjectSelect) subjectSelect.value = 'Recrutamento';
+            if (messageField) {
+                messageField.value = `Estou interessado na vaga: ${vaga}\n\nSegue em anexo meu currículo para análise.\n\nAtenciosamente,`;
+            }
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+    }
+
+    // ===== FILTRAR DOCUMENTOS =====
+    function filtrarDocumentos(categoria, botao) {
+        const botoes = document.querySelectorAll('.categoria-btn-moderno');
+        botoes.forEach(btn => btn.classList.remove('active'));
+        botao.classList.add('active');
+
+        const documentos = document.querySelectorAll('.documento-item-premium');
+        documentos.forEach(doc => {
+            if (categoria === 'todos') {
+                doc.style.display = 'flex';
+            } else {
+                const docCategoria = doc.getAttribute('data-categoria');
+                doc.style.display = docCategoria === categoria ? 'flex' : 'none';
+            }
+        });
+    }
+
+    // ===== INICIALIZAÇÃO =====
+    window.addEventListener('DOMContentLoaded', () => {
+        sections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) section.style.display = 'none';
+        });
+        setTimeout(() => navigateTo('HOME'), 50);
+    });
+
+    // ===== MENU HAMBURGER =====
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuHamburger = document.getElementById('menuHamburger');
+        const linkssecoes = document.getElementById('linkssecoes');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        const closeMenuFn = function() {
+            menuHamburger.classList.remove('active');
+            linkssecoes.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        function toggleMenu() {
+            menuHamburger.classList.toggle('active');
+            linkssecoes.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = linkssecoes.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (menuHamburger) menuHamburger.addEventListener('click', toggleMenu);
+        if (menuOverlay) menuOverlay.addEventListener('click', closeMenuFn);
+
+        const menuItems = document.querySelectorAll('#ulsecoes li');
+        menuItems.forEach(item => {
+            item.addEventListener('click', closeMenuFn);
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 750) closeMenuFn();
+        });
+    });
+
+    // ===== HEADER SCROLL EFFECT =====
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('cabecalho');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // ===== FORMULÁRIO DE CONTATO (FormSubmit) =====
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    document.getElementById('form-message').innerHTML =
+                        '<div class="success-message">✓ Mensagem enviada com sucesso! Entraremos em contato em breve.</div>';
+                    form.reset();
+                    setTimeout(() => {
+                        document.getElementById('form-message').innerHTML = '';
+                    }, 5000);
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            } catch (error) {
+                document.getElementById('form-message').innerHTML =
+                    '<div class="error-message">✗ Erro ao enviar. Tente novamente ou ligue para +244 958 153 255 ou +244 927 337 387.</div>';
+                setTimeout(() => {
+                    document.getElementById('form-message').innerHTML = '';
+                }, 5000);
+            }
+        });
+    }
+
+    // ===== NEWSLETTER (FormSubmit) =====
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(newsletterForm);
+            
+            // Função para mostrar mensagem flutuante
+            function showMessage(text, isSuccess = true) {
+                const msg = document.createElement('div');
+                msg.style.cssText = `
+                    position: fixed;
+                    bottom: 100px;
+                    right: 30px;
+                    background: ${isSuccess ? '#10b981' : '#ef4444'};
+                    color: white;
+                    padding: 15px 25px;
+                    border-radius: 50px;
+                    font-family: 'Manrope', sans-serif;
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                    z-index: 10000;
+                    animation: slideIn 0.3s ease;
+                `;
+                msg.textContent = text;
+                document.body.appendChild(msg);
+                
+                setTimeout(() => {
+                    msg.remove();
+                }, 5000);
+            }
+            
+            try {
+                const response = await fetch(newsletterForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    showMessage('✓ Newsletter subscrita com sucesso!');
+                    newsletterForm.reset();
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            } catch (error) {
+                showMessage('✗ Erro ao subscrever. Tente novamente.', false);
+            }
+        });
+    }
+
+    // ===== BARRA DE MENU FIXA (se existir) =====
+    const barmenu = document.getElementById('barmenu');
+    if (barmenu) {
+        const offsetTop = barmenu.offsetTop;
+        window.addEventListener('scroll', () => {
+            barmenu.classList.toggle('is-fixed', window.scrollY >= offsetTop);
+        });
+    }
+</script>
 </body>
 </html>
+
+<section id="blog" class="blog-premium nav-section"
+
+
