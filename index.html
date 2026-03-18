@@ -2335,9 +2335,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DOCUMENTOS MODERNA (mantida original) -->
-  <!-- SEÇÃO DOCUMENTOS MODERNA - COM SVGs DO CDN -->
-<!-- SEÇÃO DOCUMENTOS MODERNA - COM SVGs DO CDN -->
+      <!-- SEÇÃO DOCUMENTOS MODERNA - COM FILTROS CORRIGIDOS -->
 <section id="documentos" class="modern-section">
     <h2 class="modern-section-title">Documentos Institucionais</h2>
     <p class="modern-section-subtitle">Aceda às nossas políticas, manuais e documentos oficiais</p>
@@ -2345,8 +2343,8 @@
     <div class="documentos-showcase-moderno">
         <div class="documentos-categorias-moderno">
             <button class="categoria-btn-moderno active" onclick="filtrarDocumentos('todos', this)">Todos</button>
-            <button class="categoria-btn-moderno" onclick="filtrarDocumentos('politicas', this)">Políticas</button>
             <button class="categoria-btn-moderno" onclick="filtrarDocumentos('estatutos', this)">Estatutos</button>
+            <button class="categoria-btn-moderno" onclick="filtrarDocumentos('politicas', this)">Políticas</button>
         </div>
 
         <div class="documentos-grid-moderno" id="documentos-grid">
@@ -2362,10 +2360,10 @@
                     <h4>Estatuto Chivemba Security</h4>
                     <p>PDF • 1.2 MB</p>
                 </div>
-                <a href="documentos/Estatuto Chivemba-Security.pdf" class="download-link-premium" download target="_blank">↓</a>
+                <a href="documentos/Estatuto Chivemba-Security.pdf" class="download-link-premium" download>↓</a>
             </div>
 
-            <!-- Política da Empresa (disponível) -->
+            <!-- Política de Emprego (disponível) -->
             <div class="documento-item-premium" data-categoria="politicas">
                 <div class="doc-icon-moderno">
                     <svg viewBox="0 0 24 24">
@@ -2374,10 +2372,10 @@
                     </svg>
                 </div>
                 <div class="doc-info-moderno">
-                    <h4>Política da Empresa</h4>
+                    <h4>Política de Emprego</h4>
                     <p>PDF • 850 KB</p>
                 </div>
-                <a href="documentos/politica.pdf" class="download-link-premium" download target="_blank">↓</a>
+                <a href="documentos/politica_emprego.pdf" class="download-link-premium" download>↓</a>
             </div>
 
             <!-- DOCUMENTOS COMENTADOS (INDISPONÍVEIS) -->
@@ -2393,7 +2391,7 @@
                     <h4>Política de Qualidade</h4>
                     <p>PDF • 245 KB</p>
                 </div>
-                <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_qualidade.pdf', 'Política de Qualidade')">↓</a>
+                <a href="documentos/politica_qualidade.pdf" class="download-link-premium" download>↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="manuais">
@@ -2408,7 +2406,7 @@
                     <h4>Manual de Procedimentos</h4>
                     <p>PDF • 1.2 MB</p>
                 </div>
-                <a href="#" class="download-link-premium" onclick="downloadDocumento('manual_procedimentos.pdf', 'Manual de Procedimentos')">↓</a>
+                <a href="documentos/manual_procedimentos.pdf" class="download-link-premium" download>↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="politicas">
@@ -2422,7 +2420,7 @@
                     <h4>Política Ambiental</h4>
                     <p>PDF • 180 KB</p>
                 </div>
-                <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_ambiental.pdf', 'Política Ambiental')">↓</a>
+                <a href="documentos/politica_ambiental.pdf" class="download-link-premium" download>↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="politicas">
@@ -2436,7 +2434,7 @@
                     <h4>Código de Ética</h4>
                     <p>PDF • 320 KB</p>
                 </div>
-                <a href="#" class="download-link-premium" onclick="downloadDocumento('codigo_etica.pdf', 'Código de Ética')">↓</a>
+                <a href="documentos/codigo_etica.pdf" class="download-link-premium" download>↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="relatorios">
@@ -2451,7 +2449,7 @@
                     <h4>Relatório de Sustentabilidade</h4>
                     <p>PDF • 850 KB</p>
                 </div>
-                <a href="#" class="download-link-premium" onclick="downloadDocumento('relatorio_sustentabilidade.pdf', 'Relatório de Sustentabilidade')">↓</a>
+                <a href="documentos/relatorio_sustentabilidade.pdf" class="download-link-premium" download>↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="politicas">
@@ -2465,12 +2463,13 @@
                     <h4>Política de RH</h4>
                     <p>PDF • 420 KB</p>
                 </div>
-                <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_rh.pdf', 'Política de RH')">↓</a>
+                <a href="documentos/politica_rh.pdf" class="download-link-premium" download>↓</a>
             </div>
             -->
         </div>
     </div>
-</section>     
+</section>
+      
         <section id="why" class="swhy nav-section">
             <div id="w">
                 <span id="titulofilho">Por que escolher a Chivemba Security?</span>
@@ -2928,24 +2927,26 @@
         }, 500);
     }
 
-   // ===== FILTRAR DOCUMENTOS =====
+ // ===== FILTRAR DOCUMENTOS =====
 function filtrarDocumentos(categoria, botao) {
+    // Atualizar botões ativos
     const botoes = document.querySelectorAll('.categoria-btn-moderno');
     botoes.forEach(btn => btn.classList.remove('active'));
     botao.classList.add('active');
 
+    // Filtrar documentos
     const documentos = document.querySelectorAll('.documento-item-premium');
     documentos.forEach(doc => {
+        // Verificar se o documento não está comentado (pai visible)
+        const isVisible = doc.offsetParent !== null;
+        
+        if (!isVisible) return; // Ignorar documentos comentados
+        
         if (categoria === 'todos') {
             doc.style.display = 'flex';
         } else {
             const docCategoria = doc.getAttribute('data-categoria');
-            // Mostrar apenas documentos da categoria selecionada que NÃO estão comentados
-            if (docCategoria === categoria && doc.style.display !== 'none') {
-                doc.style.display = 'flex';
-            } else {
-                doc.style.display = 'none';
-            }
+            doc.style.display = docCategoria === categoria ? 'flex' : 'none';
         }
     });
 }
@@ -3097,3 +3098,5 @@ function filtrarDocumentos(categoria, botao) {
 </script>
 </body>
 </html>
+
+ FILTRAR DOCUMENTOS
