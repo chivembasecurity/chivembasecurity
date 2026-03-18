@@ -134,7 +134,7 @@ a {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* ===== MENU DE NAVEGAÇÃO (DESKTOP) - CORRIGIDO ===== */
+/* ===== MENU DE NAVEGAÇÃO (DESKTOP) ===== */
 #linkssecoes {
   display: flex;
   align-items: center;
@@ -223,7 +223,7 @@ section {
   scroll-margin-top: 70px;
 }
 
-/* ===== MEDIA QUERIES PARA DESKTOP - AJUSTADAS ===== */
+/* ===== MEDIA QUERIES PARA DESKTOP ===== */
 @media (min-width: 1400px) {
   #ulsecoes li {
     font-size: 0.95rem;
@@ -283,7 +283,7 @@ section {
   margin-right: 0;
 }
 
-/* ===== MOBILE - ATÉ 750px (CORRIGIDO - SEM MEDIA QUERIES INTERNAS) ===== */
+/* ===== MOBILE - CORRIGIDO - TAMANHO CONSISTENTE ===== */
 @media (max-width: 750px) {
   /* Ajustes de padding */
   #inicio #inc {
@@ -338,19 +338,20 @@ section {
     display: flex;
   }
 
-  /* Reset do menu desktop e configuração do menu mobile */
+  /* ===== CORREÇÃO PRINCIPAL DO MENU ===== */
   #linkssecoes {
     position: fixed;
     top: 0;
     right: -100%;
     width: 85%;
     max-width: 320px;
-    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height */
+    height: -webkit-fill-available; /* Fallback para Safari */
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     backdrop-filter: blur(10px);
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1001;
-    padding: 80px 15px 30px;
+    padding: 80px 0 20px 0; /* Padding vertical apenas */
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     overflow-y: auto;
@@ -361,19 +362,22 @@ section {
     right: 0;
   }
 
-  /* Container dos links - TAMANHO CONSISTENTE */
+  /* Container dos links - padding lateral aqui */
   #ulsecoes {
     flex-direction: column;
     width: 100%;
-    gap: 10px;
-    padding: 0;
+    gap: 8px; /* Gap fixo */
+    padding: 0 15px; /* Padding lateral movido para cá */
+    margin: 0;
+    box-sizing: border-box;
   }
 
-  /* Estilo dos links no mobile - TAMANHO FIXO SEM ALTERAÇÕES */
+  /* Estilo dos links - TAMANHO ABSOLUTAMENTE FIXO */
   #ulsecoes li {
     width: 100%;
-    padding: 18px 20px !important;
-    font-size: 1.2rem !important;
+    padding: 16px 18px !important; /* Valores fixos */
+    margin: 0;
+    font-size: 1.1rem !important; /* Tamanho fixo */
     font-weight: 600;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.05);
@@ -382,27 +386,37 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
-    margin: 0;
     box-sizing: border-box;
+    min-height: 56px; /* Altura mínima garantida */
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
   }
 
-  /* Efeito hover nos links */
+  /* Hover sem scale - só muda padding esquerdo */
   #ulsecoes li:hover,
   #ulsecoes li:active {
-    padding-left: 28px !important;
     background-color: #df2935;
     color: #fff;
     border-color: #df2935;
-    transform: scale(1.02);
+    padding-left: 24px !important; /* Só aumenta o esquerdo */
+    padding-right: 18px !important; /* Direito mantém */
+    transform: none; /* Remove o scale que distorcia */
   }
 
-  /* Garantir que todos os links sejam visíveis */
+  /* Garantir espaçamento no final */
   #ulsecoes li:last-child {
     margin-bottom: 20px;
   }
+
+  /* Overlay com altura correta */
+  .menu-overlay {
+    height: 100dvh;
+    height: -webkit-fill-available;
+  }
 }
 
-/* ===== TELEMÓVEIS PEQUENOS (até 480px) - CORRIGIDO ===== */
+/* ===== TELEMÓVEIS PEQUENOS (até 480px) ===== */
 @media (max-width: 480px) {
   #inicio #inc {
     padding-top: 65px;
@@ -447,13 +461,24 @@ section {
   #linkssecoes {
     width: 90%;
     max-width: 280px;
-    padding: 70px 12px 20px;
+    padding: 70px 0 15px 0; /* Padding vertical apenas */
   }
 
-  /* Manter tamanho consistente também em telas muito pequenas */
+  #ulsecoes {
+    padding: 0 12px; /* Padding lateral reduzido */
+    gap: 6px;
+  }
+
   #ulsecoes li {
-    padding: 16px 18px !important;
-    font-size: 1.1rem !important;
+    padding: 14px 16px !important;
+    font-size: 1rem !important;
+    min-height: 52px;
+  }
+  
+  #ulsecoes li:hover,
+  #ulsecoes li:active {
+    padding-left: 20px !important;
+    padding-right: 16px !important;
   }
 }
 
