@@ -2335,7 +2335,7 @@
             </div>
         </section>
 
-      <!-- SEÇÃO DOCUMENTOS MODERNA - COM FILTROS CORRIGIDOS -->
+   <!-- SEÇÃO DOCUMENTOS MODERNA - COM DOWNLOAD CORRIGIDO -->
 <section id="documentos" class="modern-section">
     <h2 class="modern-section-title">Documentos Institucionais</h2>
     <p class="modern-section-subtitle">Aceda às nossas políticas, manuais e documentos oficiais</p>
@@ -2360,7 +2360,7 @@
                     <h4>Estatuto Chivemba Security</h4>
                     <p>PDF • 1.2 MB</p>
                 </div>
-                <a href="documentos/Estatuto Chivemba-Security.pdf" class="download-link-premium" download>↓</a>
+                <a href="#" onclick="downloadPDF('documentos/Estatuto Chivemba-Security.pdf', 'Estatuto Chivemba Security')" class="download-link-premium">↓</a>
             </div>
 
             <!-- Política de Emprego (disponível) -->
@@ -2375,7 +2375,7 @@
                     <h4>Política de Emprego</h4>
                     <p>PDF • 850 KB</p>
                 </div>
-                <a href="documentos/politica_emprego.pdf" class="download-link-premium" download>↓</a>
+                <a href="#" onclick="downloadPDF('documentos/politica_emprego.pdf', 'Política de Emprego')" class="download-link-premium">↓</a>
             </div>
 
             <!-- DOCUMENTOS COMENTADOS (INDISPONÍVEIS) -->
@@ -2391,7 +2391,7 @@
                     <h4>Política de Qualidade</h4>
                     <p>PDF • 245 KB</p>
                 </div>
-                <a href="documentos/politica_qualidade.pdf" class="download-link-premium" download>↓</a>
+                <a href="#" onclick="downloadPDF('documentos/politica_qualidade.pdf', 'Política de Qualidade')" class="download-link-premium">↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="manuais">
@@ -2406,7 +2406,7 @@
                     <h4>Manual de Procedimentos</h4>
                     <p>PDF • 1.2 MB</p>
                 </div>
-                <a href="documentos/manual_procedimentos.pdf" class="download-link-premium" download>↓</a>
+                <a href="#" onclick="downloadPDF('documentos/manual_procedimentos.pdf', 'Manual de Procedimentos')" class="download-link-premium">↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="politicas">
@@ -2420,7 +2420,7 @@
                     <h4>Política Ambiental</h4>
                     <p>PDF • 180 KB</p>
                 </div>
-                <a href="documentos/politica_ambiental.pdf" class="download-link-premium" download>↓</a>
+                <a href="#" onclick="downloadPDF('documentos/politica_ambiental.pdf', 'Política Ambiental')" class="download-link-premium">↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="politicas">
@@ -2434,7 +2434,7 @@
                     <h4>Código de Ética</h4>
                     <p>PDF • 320 KB</p>
                 </div>
-                <a href="documentos/codigo_etica.pdf" class="download-link-premium" download>↓</a>
+                <a href="#" onclick="downloadPDF('documentos/codigo_etica.pdf', 'Código de Ética')" class="download-link-premium">↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="relatorios">
@@ -2449,7 +2449,7 @@
                     <h4>Relatório de Sustentabilidade</h4>
                     <p>PDF • 850 KB</p>
                 </div>
-                <a href="documentos/relatorio_sustentabilidade.pdf" class="download-link-premium" download>↓</a>
+                <a href="#" onclick="downloadPDF('documentos/relatorio_sustentabilidade.pdf', 'Relatório de Sustentabilidade')" class="download-link-premium">↓</a>
             </div>
 
             <div class="documento-item-premium" data-categoria="politicas">
@@ -2463,13 +2463,12 @@
                     <h4>Política de RH</h4>
                     <p>PDF • 420 KB</p>
                 </div>
-                <a href="documentos/politica_rh.pdf" class="download-link-premium" download>↓</a>
+                <a href="#" onclick="downloadPDF('documentos/politica_rh.pdf', 'Política de RH')" class="download-link-premium">↓</a>
             </div>
             -->
         </div>
     </div>
-</section>
-      
+</section>   
         <section id="why" class="swhy nav-section">
             <div id="w">
                 <span id="titulofilho">Por que escolher a Chivemba Security?</span>
@@ -2927,6 +2926,24 @@
         }, 500);
     }
 
+    // ===== DOWNLOAD DE PDF CORRIGIDO =====
+function downloadPDF(caminho, nome) {
+    // Criar um link temporário
+    const link = document.createElement('a');
+    link.href = caminho;
+    link.download = nome + '.pdf'; // Forçar o nome do arquivo
+    link.target = '_blank'; // Abrir em nova aba como fallback
+    
+    // Adicionar ao documento, clicar e remover
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Feedback para o utilizador
+    alert('A descarregar: ' + nome);
+    
+    return false; // Prevenir comportamento padrão
+}
  // ===== FILTRAR DOCUMENTOS =====
 function filtrarDocumentos(categoria, botao) {
     // Atualizar botões ativos
@@ -3098,5 +3115,4 @@ function filtrarDocumentos(categoria, botao) {
 </script>
 </body>
 </html>
-
- FILTRAR DOCUMENTOS
+<section id="documentos"
