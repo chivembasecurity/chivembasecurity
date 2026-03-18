@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Smooch+Sans:wght@100..900&display=swap');
 
-body,
-html {
+/* ===== RESET E BASE ===== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
   width: 100%;
   overflow-x: hidden;
   background-color: #F2F2F2;
+  font-family: "Manrope", sans-serif;
 }
 
 /* CORREÇÃO: Remover padding-top do main */
 main {
   padding-top: 0 !important;
-  transition: none;
 }
 
 a {
@@ -26,7 +31,6 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +69,6 @@ a {
   white-space: nowrap;
   font-size: clamp(1.3rem, 4vw, 2rem);
   font-weight: 550;
-  font-family: "Manrope", sans-serif;
   transition: all 0.3s ease;
   line-height: 1.2;
 }
@@ -78,23 +81,15 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
   line-height: 0;
-  padding: 0;
-  margin: 0;
 }
 
 #logoheader {
   width: 70px;
   height: 70px;
-  border-radius: 0;
-  background-color: transparent;
   object-fit: contain;
   object-position: center;
   transition: all 0.3s ease;
-  border: none;
-  outline: none;
-  box-shadow: none;
 }
 
 #cabecalho.scrolled #logoheader {
@@ -143,8 +138,6 @@ a {
 #ulsecoes {
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
   gap: 2px;
   flex-wrap: nowrap;
 }
@@ -155,13 +148,13 @@ a {
   display: flex;
   align-items: center;
   padding: 8px 10px;
-  font-family: "Manrope", sans-serif;
   font-weight: 600;
   white-space: nowrap;
   border-radius: 30px;
   font-size: 0.9rem;
   letter-spacing: 0.2px;
   text-transform: uppercase;
+  color: #fff;
 }
 
 #ulsecoes li:hover {
@@ -207,7 +200,6 @@ a {
 
 #inicio #inc {
   padding-top: 90px;
-  box-sizing: border-box;
   height: 100vh;
 }
 
@@ -278,12 +270,7 @@ section {
   font-size: 0.8rem;
 }
 
-/* Garantir que o último item nunca suma */
-#ulsecoes li:last-child {
-  margin-right: 0;
-}
-
-/* ===== MOBILE - CORRIGIDO - GAP CONSISTENTE ===== */
+/* ===== MOBILE - VERSÃO SIMPLIFICADA ===== */
 @media (max-width: 750px) {
   /* Ajustes de padding */
   #inicio #inc {
@@ -302,11 +289,10 @@ section {
     scroll-margin-top: 65px;
   }
 
-  /* Header mais compacto */
+  /* Header */
   #cabecalho {
     padding: 10px 15px;
     background: rgba(23, 23, 23, 0.98);
-    backdrop-filter: blur(10px);
     min-height: 65px;
   }
 
@@ -338,89 +324,76 @@ section {
     display: flex;
   }
 
-  /* ===== CORREÇÃO PRINCIPAL DO MENU ===== */
+  /* ===== MENU MOBILE - NOVA ABORDAGEM ===== */
   #linkssecoes {
     position: fixed;
     top: 0;
     right: -100%;
     width: 85%;
     max-width: 320px;
-    height: 100dvh;
-    height: -webkit-fill-available;
+    height: 100vh;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    backdrop-filter: blur(10px);
-    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: right 0.3s ease;
     z-index: 1001;
-    padding: 80px 0 20px 0;
+    padding: 80px 0 0 0;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    overflow-y: auto;
     display: block;
+    overflow-y: auto;
   }
 
   #linkssecoes.active {
     right: 0;
   }
 
-  /* Container dos links - Flex column com altura mínima */
+  /* Container dos links */
   #ulsecoes {
-    display: flex;
-    flex-direction: column;
+    display: block;
     width: 100%;
-    gap: 8px;
     padding: 0 15px;
-    margin: 0;
-    box-sizing: border-box;
-    min-height: min-content;
   }
 
-  /* Estilo dos links - ALTURA FIXA */
+  /* Itens do menu - ESTILO ÚNICO E CONSISTENTE */
   #ulsecoes li {
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 56px !important;
-    padding: 0 18px !important;
-    margin: 0;
-    font-size: 1.1rem !important;
+    min-height: 56px;
+    padding: 12px 18px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 12px;
+    color: #fff;
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    justify-content: flex-start;
+    border-radius: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     box-sizing: border-box;
-    line-height: 56px !important;
-    display: flex;
-    align-items: center;
+    line-height: 1.2;
+    cursor: pointer;
   }
 
-  /* Hover mantém altura fixa */
+  /* Último item com margem extra */
+  #ulsecoes li:last-child {
+    margin-bottom: 30px;
+  }
+
+  /* Hover effect */
   #ulsecoes li:hover,
   #ulsecoes li:active {
     background-color: #df2935;
-    color: #fff;
     border-color: #df2935;
-    padding-left: 24px !important;
-    padding-right: 18px !important;
-    height: 56px !important;
-    line-height: 56px !important;
-    transform: none;
+    padding-left: 24px;
   }
 
-  /* Garantir espaçamento no final */
-  #ulsecoes li:last-child {
-    margin-bottom: 20px;
-  }
-
-  /* Overlay com altura correta */
+  /* Overlay */
   .menu-overlay {
-    height: 100dvh;
-    height: -webkit-fill-available;
+    height: 100vh;
   }
 }
 
-/* ===== TELEMÓVEIS PEQUENOS (até 480px) ===== */
+/* ===== TELEMÓVEIS PEQUENOS ===== */
 @media (max-width: 480px) {
   #inicio #inc {
     padding-top: 65px;
@@ -465,39 +438,27 @@ section {
   #linkssecoes {
     width: 90%;
     max-width: 280px;
-    padding: 70px 0 15px 0;
+    padding-top: 70px;
   }
 
   #ulsecoes {
     padding: 0 12px;
-    gap: 6px;
   }
 
   #ulsecoes li {
-    height: 52px !important;
-    padding: 0 16px !important;
-    font-size: 1rem !important;
-    line-height: 52px !important;
+    min-height: 52px;
+    padding: 10px 16px;
+    margin-bottom: 6px;
+    font-size: 1rem;
   }
   
   #ulsecoes li:hover,
   #ulsecoes li:active {
-    padding-left: 20px !important;
-    padding-right: 16px !important;
-    height: 52px !important;
-    line-height: 52px !important;
+    padding-left: 20px;
   }
 }
 
-/* ===== GARANTIAS ===== */
-#logoheader,
-#imgl,
-#emp {
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-
+/* ===== UTILITÁRIOS ===== */
 .no-background {
-  background-color: transparent !important;
-  background-image: none !important;
+  background: transparent !important;
 }

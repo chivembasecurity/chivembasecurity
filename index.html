@@ -391,21 +391,38 @@
         #linkssecoes.active {
           right: 0;
         }
+        /* ===== BLOCO A REMOVER DO INDEX.HTML ===== */
+/* Estilo dos links no mobile - TAMANHO FIXO SEM ALTERAÇÕES */
+#ulsecoes li {
+  width: 100%;
+  padding: 18px 20px !important;
+  font-size: 1.2rem !important;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-        #ulsecoes {
-          flex-direction: column;
-          width: 100%;
-          gap: 15px;
-        }
+/* Efeito hover nos links */
+#ulsecoes li:hover,
+#ulsecoes li:active {
+  padding-left: 28px !important;
+  background-color: #df2935;
+  color: #fff;
+  border-color: #df2935;
+  transform: scale(1.02);
+}
 
-        #ulsecoes li {
-          width: 100%;
-          padding: 15px 20px;
-          font-size: 1.2rem;
-          border-radius: 8px;
-          background-color: rgba(255, 255, 255, 0.05);
-          list-style: none;
-        }
+/* Garantir que todos os links sejam visíveis */
+#ulsecoes li:last-child {
+  margin-bottom: 20px;
+}
 
         #ulsecoes li:hover {
           padding-left: 30px;
@@ -3044,3 +3061,4 @@
 </html>
 
 
+#ulsecoes
