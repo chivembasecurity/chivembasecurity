@@ -360,6 +360,7 @@ section {
     align-items: center;
     width: 100%;
     min-height: 56px !important;
+    height: 56px !important;
     padding: 0 18px !important;
     font-size: 1.1rem !important;
     font-weight: 600;
@@ -371,7 +372,7 @@ section {
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     cursor: pointer;
-    line-height: 1.2;
+    line-height: 56px !important;
   }
 
   /* Garantir que o scrolled não afeta o gap */
@@ -386,6 +387,9 @@ section {
     border-color: #df2935;
     padding-left: 24px !important;
     padding-right: 18px !important;
+    min-height: 56px !important;
+    height: 56px !important;
+    line-height: 56px !important;
   }
 
   /* Overlay */
@@ -450,8 +454,10 @@ section {
   /* Itens do menu - 480px com !important */
   #ulsecoes li {
     min-height: 52px !important;
+    height: 52px !important;
     padding: 0 16px !important;
     font-size: 1rem !important;
+    line-height: 52px !important;
   }
   
   /* Garantir gap consistente no scrolled */
@@ -463,24 +469,93 @@ section {
   #ulsecoes li:active {
     padding-left: 20px !important;
     padding-right: 16px !important;
+    min-height: 52px !important;
+    height: 52px !important;
+    line-height: 52px !important;
   }
 }
 
-/* ===== RESET PARA MOBILE - IGNORAR ESTADO SCROLLED ===== */
+/* ===== RESET TOTAL PARA MOBILE - SOBRESCREVE TUDO ===== */
 @media (max-width: 750px) {
-  /* Anular todos os efeitos do scrolled nos itens do menu */
-  #cabecalho.scrolled #ulsecoes li {
+  /* Matar todos os estilos do scrolled para o menu */
+  #cabecalho.scrolled #ulsecoes,
+  #cabecalho.scrolled #ulsecoes li,
+  #cabecalho.scrolled #ulsecoes li:hover,
+  #cabecalho.scrolled #ulsecoes li:active,
+  #cabecalho #ulsecoes li,
+  #ulsecoes li {
     min-height: 56px !important;
+    height: 56px !important;
     padding: 0 18px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
     font-size: 1.1rem !important;
+    line-height: 56px !important;
+    margin: 0 !important;
   }
+
+  #cabecalho.scrolled #ulsecoes {
+    gap: 8px !important;
+  }
+
+  /* Garantir que o hover também mantém */
+  #cabecalho.scrolled #ulsecoes li:hover,
+  #ulsecoes li:hover {
+    padding-left: 24px !important;
+    padding-right: 18px !important;
+    min-height: 56px !important;
+    height: 56px !important;
+    line-height: 56px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #cabecalho.scrolled #ulsecoes,
+  #cabecalho.scrolled #ulsecoes li,
+  #cabecalho.scrolled #ulsecoes li:hover,
+  #cabecalho.scrolled #ulsecoes li:active,
+  #cabecalho #ulsecoes li,
+  #ulsecoes li {
+    min-height: 52px !important;
+    height: 52px !important;
+    padding: 0 16px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    font-size: 1rem !important;
+    line-height: 52px !important;
+    margin: 0 !important;
+  }
+
+  #cabecalho.scrolled #ulsecoes {
+    gap: 6px !important;
+  }
+
+  #cabecalho.scrolled #ulsecoes li:hover,
+  #ulsecoes li:hover {
+    padding-left: 20px !important;
+    padding-right: 16px !important;
+    min-height: 52px !important;
+    height: 52px !important;
+    line-height: 52px !important;
+  }
+}
+
+/* Anular qualquer outra tentativa de mudar o tamanho */
+#cabecalho.scrolled #ulsecoes li {
+  min-height: 56px !important;
+  height: 56px !important;
+  padding: 0 18px !important;
+  font-size: 1.1rem !important;
+  line-height: 56px !important;
 }
 
 @media (max-width: 480px) {
   #cabecalho.scrolled #ulsecoes li {
     min-height: 52px !important;
+    height: 52px !important;
     padding: 0 16px !important;
     font-size: 1rem !important;
+    line-height: 52px !important;
   }
 }
 
