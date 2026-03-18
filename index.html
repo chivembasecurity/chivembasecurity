@@ -2337,6 +2337,7 @@
 
         <!-- SEÇÃO DOCUMENTOS MODERNA (mantida original) -->
   <!-- SEÇÃO DOCUMENTOS MODERNA - COM SVGs DO CDN -->
+<!-- SEÇÃO DOCUMENTOS MODERNA - COM SVGs DO CDN -->
 <section id="documentos" class="modern-section">
     <h2 class="modern-section-title">Documentos Institucionais</h2>
     <p class="modern-section-subtitle">Aceda às nossas políticas, manuais e documentos oficiais</p>
@@ -2345,11 +2346,42 @@
         <div class="documentos-categorias-moderno">
             <button class="categoria-btn-moderno active" onclick="filtrarDocumentos('todos', this)">Todos</button>
             <button class="categoria-btn-moderno" onclick="filtrarDocumentos('politicas', this)">Políticas</button>
-            <button class="categoria-btn-moderno" onclick="filtrarDocumentos('manuais', this)">Manuais</button>
-            <button class="categoria-btn-moderno" onclick="filtrarDocumentos('relatorios', this)">Relatórios</button>
+            <button class="categoria-btn-moderno" onclick="filtrarDocumentos('estatutos', this)">Estatutos</button>
         </div>
 
         <div class="documentos-grid-moderno" id="documentos-grid">
+            <!-- Estatuto da Empresa (disponível) -->
+            <div class="documento-item-premium" data-categoria="estatutos">
+                <div class="doc-icon-moderno">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                        <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                    </svg>
+                </div>
+                <div class="doc-info-moderno">
+                    <h4>Estatuto Chivemba Security</h4>
+                    <p>PDF • 1.2 MB</p>
+                </div>
+                <a href="documentos/Estatuto Chivemba-Security.pdf" class="download-link-premium" download target="_blank">↓</a>
+            </div>
+
+            <!-- Política da Empresa (disponível) -->
+            <div class="documento-item-premium" data-categoria="politicas">
+                <div class="doc-icon-moderno">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                        <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                    </svg>
+                </div>
+                <div class="doc-info-moderno">
+                    <h4>Política da Empresa</h4>
+                    <p>PDF • 850 KB</p>
+                </div>
+                <a href="documentos/politica.pdf" class="download-link-premium" download target="_blank">↓</a>
+            </div>
+
+            <!-- DOCUMENTOS COMENTADOS (INDISPONÍVEIS) -->
+            <!-- 
             <div class="documento-item-premium" data-categoria="politicas">
                 <div class="doc-icon-moderno">
                     <svg viewBox="0 0 24 24">
@@ -2435,10 +2467,10 @@
                 </div>
                 <a href="#" class="download-link-premium" onclick="downloadDocumento('politica_rh.pdf', 'Política de RH')">↓</a>
             </div>
+            -->
         </div>
     </div>
-</section>
-     
+</section>     
         <section id="why" class="swhy nav-section">
             <div id="w">
                 <span id="titulofilho">Por que escolher a Chivemba Security?</span>
@@ -2896,23 +2928,27 @@
         }, 500);
     }
 
-    // ===== FILTRAR DOCUMENTOS =====
-    function filtrarDocumentos(categoria, botao) {
-        const botoes = document.querySelectorAll('.categoria-btn-moderno');
-        botoes.forEach(btn => btn.classList.remove('active'));
-        botao.classList.add('active');
+   // ===== FILTRAR DOCUMENTOS =====
+function filtrarDocumentos(categoria, botao) {
+    const botoes = document.querySelectorAll('.categoria-btn-moderno');
+    botoes.forEach(btn => btn.classList.remove('active'));
+    botao.classList.add('active');
 
-        const documentos = document.querySelectorAll('.documento-item-premium');
-        documentos.forEach(doc => {
-            if (categoria === 'todos') {
+    const documentos = document.querySelectorAll('.documento-item-premium');
+    documentos.forEach(doc => {
+        if (categoria === 'todos') {
+            doc.style.display = 'flex';
+        } else {
+            const docCategoria = doc.getAttribute('data-categoria');
+            // Mostrar apenas documentos da categoria selecionada que NÃO estão comentados
+            if (docCategoria === categoria && doc.style.display !== 'none') {
                 doc.style.display = 'flex';
             } else {
-                const docCategoria = doc.getAttribute('data-categoria');
-                doc.style.display = docCategoria === categoria ? 'flex' : 'none';
+                doc.style.display = 'none';
             }
-        });
-    }
-
+        }
+    });
+}
     // ===== INICIALIZAÇÃO =====
     window.addEventListener('DOMContentLoaded', () => {
         sections.forEach(sectionId => {
@@ -3061,6 +3097,3 @@
 </script>
 </body>
 </html>
-
-
-Graduado em Gestão de Segurança Privada e com especializações internacionais, Almerindo lidera pessoalmente o desenvolvimento de estratégias e protocolos que garantem a máxima proteção aos clientes.
