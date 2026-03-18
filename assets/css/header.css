@@ -351,17 +351,17 @@ section {
     flex-direction: column;
     width: 100%;
     padding: 0 15px;
-    gap: 8px; /* ← GAP ENTRE OS LINKS */
+    gap: 8px;
   }
 
-  /* Itens do menu */
+  /* Itens do menu - com !important para anular o scrolled */
   #ulsecoes li {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 56px;
-    padding: 0 18px;
-    font-size: 1.1rem;
+    min-height: 56px !important;
+    padding: 0 18px !important;
+    font-size: 1.1rem !important;
     font-weight: 600;
     color: #fff;
     background-color: rgba(255, 255, 255, 0.05);
@@ -374,12 +374,18 @@ section {
     line-height: 1.2;
   }
 
+  /* Garantir que o scrolled não afeta o gap */
+  #cabecalho.scrolled #ulsecoes {
+    gap: 8px !important;
+  }
+
   /* Hover effect */
   #ulsecoes li:hover,
   #ulsecoes li:active {
     background-color: #df2935;
     border-color: #df2935;
-    padding-left: 24px;
+    padding-left: 24px !important;
+    padding-right: 18px !important;
   }
 
   /* Overlay */
@@ -438,18 +444,43 @@ section {
 
   #ulsecoes {
     padding: 0 12px;
-    gap: 6px; /* ← GAP MENOR MAS CONSISTENTE */
+    gap: 6px;
   }
 
+  /* Itens do menu - 480px com !important */
   #ulsecoes li {
-    min-height: 52px;
-    padding: 0 16px;
-    font-size: 1rem;
+    min-height: 52px !important;
+    padding: 0 16px !important;
+    font-size: 1rem !important;
   }
   
+  /* Garantir gap consistente no scrolled */
+  #cabecalho.scrolled #ulsecoes {
+    gap: 6px !important;
+  }
+
   #ulsecoes li:hover,
   #ulsecoes li:active {
-    padding-left: 22px;
+    padding-left: 20px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ===== RESET PARA MOBILE - IGNORAR ESTADO SCROLLED ===== */
+@media (max-width: 750px) {
+  /* Anular todos os efeitos do scrolled nos itens do menu */
+  #cabecalho.scrolled #ulsecoes li {
+    min-height: 56px !important;
+    padding: 0 18px !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #cabecalho.scrolled #ulsecoes li {
+    min-height: 52px !important;
+    padding: 0 16px !important;
+    font-size: 1rem !important;
   }
 }
 
