@@ -2945,30 +2945,35 @@ function downloadPDF(caminho, nome) {
     return false;
 }
   
-    // ===== FILTRAR DOCUMENTOS =====
+// ===== FILTRAR DOCUMENTOS =====
 function filtrarDocumentos(categoria, botao) {
     // Atualizar botões ativos
     const botoes = document.querySelectorAll('.categoria-btn-moderno');
     botoes.forEach(btn => btn.classList.remove('active'));
     botao.classList.add('active');
 
-    // Filtrar documentos
+    // Filtrar documentos - considerar TODOS os elementos, mesmo os ocultos
     const documentos = document.querySelectorAll('.documento-item-premium');
+    
     documentos.forEach(doc => {
-        // Verificar se o documento não está comentado (pai visible)
-        const isVisible = doc.offsetParent !== null;
-        
-        if (!isVisible) return; // Ignorar documentos comentados
+        // Verificar se o documento está comentado (verificar se o elemento existe no DOM)
+        // Se o elemento estiver comentado, ele não vai existir no DOM, então ignoramos
         
         if (categoria === 'todos') {
             doc.style.display = 'flex';
         } else {
             const docCategoria = doc.getAttribute('data-categoria');
-            doc.style.display = docCategoria === categoria ? 'flex' : 'none';
+            // Mostrar apenas documentos da categoria selecionada
+            if (docCategoria === categoria) {
+                doc.style.display = 'flex';
+            } else {
+                doc.style.display = 'none';
+            }
         }
     });
-}
-    // ===== INICIALIZAÇÃO =====
+}  
+
+// ===== INICIALIZAÇÃO =====
     window.addEventListener('DOMContentLoaded', () => {
         sections.forEach(sectionId => {
             const section = document.getElementById(sectionId);
@@ -3116,5 +3121,3 @@ function filtrarDocumentos(categoria, botao) {
 </script>
 </body>
 </html>
-
-function downloadPDF(caminho, nome)
