@@ -283,7 +283,7 @@ section {
   margin-right: 0;
 }
 
-/* ===== MOBILE - CORRIGIDO - TAMANHO CONSISTENTE ===== */
+/* ===== MOBILE - CORRIGIDO - GAP CONSISTENTE ===== */
 @media (max-width: 750px) {
   /* Ajustes de padding */
   #inicio #inc {
@@ -345,13 +345,13 @@ section {
     right: -100%;
     width: 85%;
     max-width: 320px;
-    height: 100dvh; /* Dynamic viewport height */
-    height: -webkit-fill-available; /* Fallback para Safari */
+    height: 100dvh;
+    height: -webkit-fill-available;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     backdrop-filter: blur(10px);
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1001;
-    padding: 80px 0 20px 0; /* Padding vertical apenas */
+    padding: 80px 0 20px 0;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     overflow-y: auto;
@@ -362,22 +362,25 @@ section {
     right: 0;
   }
 
-  /* Container dos links - padding lateral aqui */
+  /* Container dos links - Flex column com altura mínima */
   #ulsecoes {
+    display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 8px; /* Gap fixo */
-    padding: 0 15px; /* Padding lateral movido para cá */
+    gap: 8px;
+    padding: 0 15px;
     margin: 0;
     box-sizing: border-box;
+    min-height: min-content;
   }
 
-  /* Estilo dos links - TAMANHO ABSOLUTAMENTE FIXO */
+  /* Estilo dos links - ALTURA FIXA */
   #ulsecoes li {
     width: 100%;
-    padding: 16px 18px !important; /* Valores fixos */
+    height: 56px !important;
+    padding: 0 18px !important;
     margin: 0;
-    font-size: 1.1rem !important; /* Tamanho fixo */
+    font-size: 1.1rem !important;
     font-weight: 600;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.05);
@@ -387,21 +390,22 @@ section {
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     box-sizing: border-box;
-    min-height: 56px; /* Altura mínima garantida */
-    line-height: 1.2;
+    line-height: 56px !important;
     display: flex;
     align-items: center;
   }
 
-  /* Hover sem scale - só muda padding esquerdo */
+  /* Hover mantém altura fixa */
   #ulsecoes li:hover,
   #ulsecoes li:active {
     background-color: #df2935;
     color: #fff;
     border-color: #df2935;
-    padding-left: 24px !important; /* Só aumenta o esquerdo */
-    padding-right: 18px !important; /* Direito mantém */
-    transform: none; /* Remove o scale que distorcia */
+    padding-left: 24px !important;
+    padding-right: 18px !important;
+    height: 56px !important;
+    line-height: 56px !important;
+    transform: none;
   }
 
   /* Garantir espaçamento no final */
@@ -461,24 +465,27 @@ section {
   #linkssecoes {
     width: 90%;
     max-width: 280px;
-    padding: 70px 0 15px 0; /* Padding vertical apenas */
+    padding: 70px 0 15px 0;
   }
 
   #ulsecoes {
-    padding: 0 12px; /* Padding lateral reduzido */
+    padding: 0 12px;
     gap: 6px;
   }
 
   #ulsecoes li {
-    padding: 14px 16px !important;
+    height: 52px !important;
+    padding: 0 16px !important;
     font-size: 1rem !important;
-    min-height: 52px;
+    line-height: 52px !important;
   }
   
   #ulsecoes li:hover,
   #ulsecoes li:active {
     padding-left: 20px !important;
     padding-right: 16px !important;
+    height: 52px !important;
+    line-height: 52px !important;
   }
 }
 
