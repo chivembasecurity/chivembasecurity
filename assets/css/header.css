@@ -130,45 +130,52 @@ a {
 }
 
 /* ===== MENU DE NAVEGAÇÃO (DESKTOP) ===== */
-#linkssecoes {
-  display: flex;
-  align-items: center;
-}
+@media (min-width: 751px) {
+  #linkssecoes {
+    display: flex;
+    align-items: center;
+  }
 
-#ulsecoes {
-  display: flex;
-  list-style: none;
-  gap: 2px;
-  flex-wrap: nowrap;
-}
+  #ulsecoes {
+    display: flex;
+    list-style: none;
+    gap: 2px;
+    flex-wrap: nowrap;
+  }
 
-#ulsecoes li {
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 8px 10px;
-  font-weight: 600;
-  white-space: nowrap;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  letter-spacing: 0.2px;
-  text-transform: uppercase;
-  color: #fff;
-}
+  #ulsecoes li {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: #fff;
+  }
 
-#ulsecoes li:hover {
-  color: rgb(248, 38, 52);
-  background-color: rgba(255, 255, 255, 0.15);
-  padding-left: 14px;
-  padding-right: 14px;
-  transform: scale(0.98);
-  font-weight: 700;
-}
+  #ulsecoes li:hover {
+    color: rgb(248, 38, 52);
+    background-color: rgba(255, 255, 255, 0.15);
+    padding-left: 14px;
+    padding-right: 14px;
+    transform: scale(0.98);
+    font-weight: 700;
+  }
 
-#cabecalho.scrolled #ulsecoes li {
-  padding: 6px 8px;
-  font-size: 0.85rem;
+  /* Estado scrolled no desktop */
+  #cabecalho.scrolled #ulsecoes li {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  #cabecalho.scrolled #ulsecoes {
+    gap: 1px;
+  }
 }
 
 /* ===== OVERLAY ===== */
@@ -215,7 +222,46 @@ section {
   scroll-margin-top: 70px;
 }
 
-/* ===== MEDIA QUERIES PARA DESKTOP ===== */
+/* ===== MEDIA QUERIES PARA DESKTOP (AJUSTES DE TAMANHO) ===== */
+@media (min-width: 751px) and (max-width: 1400px) {
+  @media (max-width: 1300px) {
+    #ulsecoes li {
+      padding: 7px 8px;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    #ulsecoes li {
+      padding: 6px 7px;
+      font-size: 0.8rem;
+    }
+    
+    #nomemph {
+      font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    }
+    
+    #logoheader {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    #ulsecoes li {
+      padding: 5px 6px;
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    #ulsecoes li {
+      padding: 4px 5px;
+      font-size: 0.7rem;
+    }
+  }
+}
+
 @media (min-width: 1400px) {
   #ulsecoes li {
     font-size: 0.95rem;
@@ -223,54 +269,7 @@ section {
   }
 }
 
-@media (max-width: 1300px) {
-  #ulsecoes li {
-    padding: 7px 8px;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  #ulsecoes li {
-    padding: 6px 7px;
-    font-size: 0.8rem;
-  }
-  
-  #nomemph {
-    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
-  }
-  
-  #logoheader {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-@media (max-width: 1100px) {
-  #ulsecoes li {
-    padding: 5px 6px;
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 1000px) {
-  #ulsecoes li {
-    padding: 4px 5px;
-    font-size: 0.7rem;
-  }
-}
-
-/* Versão scrolled com ajustes */
-#cabecalho.scrolled #ulsecoes {
-  gap: 1px;
-}
-
-#cabecalho.scrolled #ulsecoes li {
-  padding: 5px 7px;
-  font-size: 0.8rem;
-}
-
-/* ===== MOBILE - VERSÃO CORRIGIDA COM ESPAÇAMENTO ===== */
+/* ===== MOBILE - TODOS OS ESTILOS MOBILE AQUI ===== */
 @media (max-width: 750px) {
   /* Ajustes de padding */
   #inicio #inc {
@@ -289,7 +288,7 @@ section {
     scroll-margin-top: 65px;
   }
 
-  /* Header */
+  /* Header mobile */
   #cabecalho {
     padding: 10px 15px;
     background: rgba(23, 23, 23, 0.98);
@@ -324,7 +323,7 @@ section {
     display: flex;
   }
 
-  /* ===== MENU MOBILE - CORRIGIDO ===== */
+  /* Esconder menu desktop e mostrar versão mobile */
   #linkssecoes {
     position: fixed;
     top: 0;
@@ -345,7 +344,7 @@ section {
     right: 0;
   }
 
-  /* Container dos links */
+  /* Container dos links mobile */
   #ulsecoes {
     display: flex;
     flex-direction: column;
@@ -354,15 +353,15 @@ section {
     gap: 8px;
   }
 
-  /* Itens do menu - com !important para anular o scrolled */
+  /* Itens do menu mobile - TAMANHO FIXO */
   #ulsecoes li {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 56px !important;
-    height: 56px !important;
-    padding: 0 18px !important;
-    font-size: 1.1rem !important;
+    min-height: 56px;
+    height: 56px;
+    padding: 0 18px;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #fff;
     background-color: rgba(255, 255, 255, 0.05);
@@ -372,29 +371,39 @@ section {
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     cursor: pointer;
-    line-height: 56px !important;
+    line-height: 56px;
   }
 
-  /* Garantir que o scrolled não afeta o gap */
-  #cabecalho.scrolled #ulsecoes {
-    gap: 8px !important;
-  }
-
-  /* Hover effect */
+  /* Hover effect mobile */
   #ulsecoes li:hover,
   #ulsecoes li:active {
     background-color: #df2935;
     border-color: #df2935;
-    padding-left: 24px !important;
-    padding-right: 18px !important;
-    min-height: 56px !important;
-    height: 56px !important;
-    line-height: 56px !important;
+    padding-left: 24px;
+    padding-right: 18px;
   }
 
   /* Overlay */
   .menu-overlay {
     height: 100vh;
+  }
+
+  /* Reset do scrolled para mobile - GARANTIR TAMANHO FIXO */
+  #cabecalho.scrolled #ulsecoes li {
+    min-height: 56px;
+    height: 56px;
+    padding: 0 18px;
+    font-size: 1.1rem;
+    line-height: 56px;
+  }
+
+  #cabecalho.scrolled #ulsecoes {
+    gap: 8px;
+  }
+
+  #cabecalho.scrolled #ulsecoes li:hover {
+    padding-left: 24px;
+    padding-right: 18px;
   }
 }
 
@@ -451,111 +460,32 @@ section {
     gap: 6px;
   }
 
-  /* Itens do menu - 480px com !important */
+  /* Itens do menu - 480px */
   #ulsecoes li {
-    min-height: 52px !important;
-    height: 52px !important;
-    padding: 0 16px !important;
-    font-size: 1rem !important;
-    line-height: 52px !important;
+    min-height: 52px;
+    height: 52px;
+    padding: 0 16px;
+    font-size: 1rem;
+    line-height: 52px;
   }
   
-  /* Garantir gap consistente no scrolled */
-  #cabecalho.scrolled #ulsecoes {
-    gap: 6px !important;
-  }
-
   #ulsecoes li:hover,
   #ulsecoes li:active {
-    padding-left: 20px !important;
-    padding-right: 16px !important;
-    min-height: 52px !important;
-    height: 52px !important;
-    line-height: 52px !important;
-  }
-}
-
-/* ===== RESET TOTAL PARA MOBILE - SOBRESCREVE TUDO ===== */
-@media (max-width: 750px) {
-  /* Matar todos os estilos do scrolled para o menu */
-  #cabecalho.scrolled #ulsecoes,
-  #cabecalho.scrolled #ulsecoes li,
-  #cabecalho.scrolled #ulsecoes li:hover,
-  #cabecalho.scrolled #ulsecoes li:active,
-  #cabecalho #ulsecoes li,
-  #ulsecoes li {
-    min-height: 56px !important;
-    height: 56px !important;
-    padding: 0 18px !important;
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-    font-size: 1.1rem !important;
-    line-height: 56px !important;
-    margin: 0 !important;
+    padding-left: 20px;
+    padding-right: 16px;
   }
 
-  #cabecalho.scrolled #ulsecoes {
-    gap: 8px !important;
-  }
-
-  /* Garantir que o hover também mantém */
-  #cabecalho.scrolled #ulsecoes li:hover,
-  #ulsecoes li:hover {
-    padding-left: 24px !important;
-    padding-right: 18px !important;
-    min-height: 56px !important;
-    height: 56px !important;
-    line-height: 56px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  #cabecalho.scrolled #ulsecoes,
-  #cabecalho.scrolled #ulsecoes li,
-  #cabecalho.scrolled #ulsecoes li:hover,
-  #cabecalho.scrolled #ulsecoes li:active,
-  #cabecalho #ulsecoes li,
-  #ulsecoes li {
-    min-height: 52px !important;
-    height: 52px !important;
-    padding: 0 16px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    font-size: 1rem !important;
-    line-height: 52px !important;
-    margin: 0 !important;
-  }
-
-  #cabecalho.scrolled #ulsecoes {
-    gap: 6px !important;
-  }
-
-  #cabecalho.scrolled #ulsecoes li:hover,
-  #ulsecoes li:hover {
-    padding-left: 20px !important;
-    padding-right: 16px !important;
-    min-height: 52px !important;
-    height: 52px !important;
-    line-height: 52px !important;
-  }
-}
-
-/* Anular qualquer outra tentativa de mudar o tamanho */
-#cabecalho.scrolled #ulsecoes li {
-  min-height: 56px !important;
-  height: 56px !important;
-  padding: 0 18px !important;
-  font-size: 1.1rem !important;
-  line-height: 56px !important;
-}
-
-@media (max-width: 480px) {
+  /* Reset scrolled para 480px */
   #cabecalho.scrolled #ulsecoes li {
-    min-height: 52px !important;
-    height: 52px !important;
-    padding: 0 16px !important;
-    font-size: 1rem !important;
-    line-height: 52px !important;
+    min-height: 52px;
+    height: 52px;
+    padding: 0 16px;
+    font-size: 1rem;
+    line-height: 52px;
+  }
+
+  #cabecalho.scrolled #ulsecoes {
+    gap: 6px;
   }
 }
 
