@@ -270,7 +270,7 @@ section {
   font-size: 0.8rem;
 }
 
-/* ===== MOBILE - VERSÃO SIMPLIFICADA ===== */
+/* ===== MOBILE - VERSÃO CORRIGIDA COM ESPAÇAMENTO ===== */
 @media (max-width: 750px) {
   /* Ajustes de padding */
   #inicio #inc {
@@ -324,7 +324,7 @@ section {
     display: flex;
   }
 
-  /* ===== MENU MOBILE - NOVA ABORDAGEM ===== */
+  /* ===== MENU MOBILE - CORRIGIDO ===== */
   #linkssecoes {
     position: fixed;
     top: 0;
@@ -335,7 +335,7 @@ section {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     transition: right 0.3s ease;
     z-index: 1001;
-    padding: 80px 0 0 0;
+    padding: 80px 0 20px 0;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
     display: block;
     overflow-y: auto;
@@ -347,19 +347,20 @@ section {
 
   /* Container dos links */
   #ulsecoes {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 0 15px;
+    gap: 8px; /* ← GAP ENTRE OS LINKS */
   }
 
-  /* Itens do menu - ESTILO ÚNICO E CONSISTENTE */
+  /* Itens do menu */
   #ulsecoes li {
     display: flex;
     align-items: center;
     width: 100%;
     min-height: 56px;
-    padding: 12px 18px;
-    margin-bottom: 8px;
+    padding: 0 18px;
     font-size: 1.1rem;
     font-weight: 600;
     color: #fff;
@@ -369,14 +370,8 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
-    box-sizing: border-box;
-    line-height: 1.2;
     cursor: pointer;
-  }
-
-  /* Último item com margem extra */
-  #ulsecoes li:last-child {
-    margin-bottom: 30px;
+    line-height: 1.2;
   }
 
   /* Hover effect */
@@ -438,23 +433,23 @@ section {
   #linkssecoes {
     width: 90%;
     max-width: 280px;
-    padding-top: 70px;
+    padding: 70px 0 15px 0;
   }
 
   #ulsecoes {
     padding: 0 12px;
+    gap: 6px; /* ← GAP MENOR MAS CONSISTENTE */
   }
 
   #ulsecoes li {
     min-height: 52px;
-    padding: 10px 16px;
-    margin-bottom: 6px;
+    padding: 0 16px;
     font-size: 1rem;
   }
   
   #ulsecoes li:hover,
   #ulsecoes li:active {
-    padding-left: 20px;
+    padding-left: 22px;
   }
 }
 
