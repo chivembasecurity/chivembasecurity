@@ -219,7 +219,7 @@ section {
   text-align: center;
 }
 
-/* ===== SEÇÃO WHY ===== */
+/* ===== SEÇÃO WHY (CORRIGIDA) ===== */
 #why {
   display: flex;
   flex-direction: column;
@@ -229,50 +229,11 @@ section {
   font-family: "Manrope", sans-serif;
 }
 
-#why .cardw {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  width: 250px;
-  height: 150px;
-  padding: 20px;
-  border-radius: 16px;
-}
-
-#why .cardw img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
 #why #w {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2vh;
-}
-
-#why .cardsw {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2vw;
-  justify-content: center;
-  align-items: center;
-}
-
-#why .titc {
-  font-weight: 700;
-  font-size: large;
-  color: #df2935;
-}
-
-#why .descc {
-  font-weight: 500;
-  color: gray;
 }
 
 #why #titulofilho {
@@ -287,7 +248,60 @@ section {
   font-size: x-large;
 }
 
-/* ===== SEÇÃO MISSÃO ===== */
+#why .cardsw {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+#why .cardw {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 250px;
+  min-height: 200px;
+  height: auto;
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  gap: 12px;
+}
+
+#why .cardw img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+#why .titc {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #df2935;
+  text-align: center;
+  width: 100%;
+}
+
+#why .descc {
+  font-weight: 500;
+  color: gray;
+  text-align: center;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ===== SEÇÃO MISSÃO (CORRIGIDA) ===== */
 #missao {
   display: flex;
   flex-direction: column;
@@ -296,49 +310,11 @@ section {
   font-family: "Manrope", sans-serif;
 }
 
-#missao .cardw {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  background-color: #fff;
-  gap: 2vh;
-  width: 250px;
-  height: fit-content;
-  padding: 20px;
-  border-radius: 16px;
-}
-
-#missao .cardw img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
 #missao #wm {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2vh;
-}
-
-#missao .cardsw {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2vw;
-  justify-content: center;
-  align-items: center;
-}
-
-#missao .titc {
-  font-weight: 700;
-  font-size: large;
-  color: #df2935;
-}
-
-#missao .descc {
-  font-weight: 500;
-  color: gray;
 }
 
 #missao #titulofilhom {
@@ -350,6 +326,57 @@ section {
 #missao #subtitulofilhom {
   color: gray;
   font-size: x-large;
+}
+
+#missao .cardsw {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+#missao .cardw {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #fff;
+  width: 250px;
+  min-height: 200px;
+  height: auto;
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  gap: 12px;
+}
+
+#missao .cardw img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+#missao .titc {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #df2935;
+  text-align: center;
+  width: 100%;
+}
+
+#missao .descc {
+  font-weight: 500;
+  color: gray;
+  text-align: center;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ===== SEÇÃO SOBRE ===== */
@@ -652,6 +679,34 @@ iframe {
   #in #sp {
     padding-top: 10vh;
     height: 30vh;
+  }
+
+  /* Cards responsivos */
+  #why .cardw,
+  #missao .cardw {
+    width: 100%;
+    max-width: 300px;
+    min-height: 180px;
+    padding: 20px 15px;
+  }
+  
+  #why .cardsw,
+  #missao .cardsw {
+    gap: 15px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #why .cardw,
+  #missao .cardw {
+    min-height: 160px;
+    padding: 18px 12px;
+  }
+  
+  #why .descc,
+  #missao .descc {
+    font-size: 0.9rem;
   }
 }
 
