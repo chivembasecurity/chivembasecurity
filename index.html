@@ -2348,35 +2348,35 @@
         </div>
 
         <div class="documentos-grid-moderno" id="documentos-grid">
-            <!-- Estatuto da Empresa (disponível) -->
-            <div class="documento-item-premium" data-categoria="estatutos">
-                <div class="doc-icon-moderno">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
-                        <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-                    </svg>
-                </div>
-                <div class="doc-info-moderno">
-                    <h4>Estatuto Chivemba Security</h4>
-                    <p>PDF • 1.2 MB</p>
-                </div>
-                <a href="#" onclick="downloadPDF('documentos/Estatuto Chivemba-Security.pdf', 'Estatuto Chivemba Security')" class="download-link-premium">↓</a>
-            </div>
+           <!-- Estatuto da Empresa (disponível) -->
+<div class="documento-item-premium" data-categoria="estatutos">
+    <div class="doc-icon-moderno">
+        <svg viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+        </svg>
+    </div>
+    <div class="doc-info-moderno">
+        <h4>Estatuto Chivemba Security</h4>
+        <p>PDF • 1.2 MB</p>
+    </div>
+    <a href="#" onclick="downloadPDF('docs/Estatuto Chivemba-Security.pdf', 'Estatuto Chivemba Security')" class="download-link-premium">↓</a>
+</div>
 
-            <!-- Política de Emprego (disponível) -->
-            <div class="documento-item-premium" data-categoria="politicas">
-                <div class="doc-icon-moderno">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
-                        <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-                    </svg>
-                </div>
-                <div class="doc-info-moderno">
-                    <h4>Política de Emprego</h4>
-                    <p>PDF • 850 KB</p>
-                </div>
-                <a href="#" onclick="downloadPDF('documentos/politica_emprego.pdf', 'Política de Emprego')" class="download-link-premium">↓</a>
-            </div>
+<!-- Política de Emprego (disponível) -->
+<div class="documento-item-premium" data-categoria="politicas">
+    <div class="doc-icon-moderno">
+        <svg viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+        </svg>
+    </div>
+    <div class="doc-info-moderno">
+        <h4>Política de Emprego</h4>
+        <p>PDF • 850 KB</p>
+    </div>
+    <a href="#" onclick="downloadPDF('docs/politica_emprego.pdf', 'Política de Emprego')" class="download-link-premium">↓</a>
+</div>
 
             <!-- DOCUMENTOS COMENTADOS (INDISPONÍVEIS) -->
             <!-- 
@@ -2926,25 +2926,26 @@
         }, 500);
     }
 
-    // ===== DOWNLOAD DE PDF CORRIGIDO =====
+  // ===== DOWNLOAD DE PDF CORRIGIDO =====
 function downloadPDF(caminho, nome) {
     // Criar um link temporário
     const link = document.createElement('a');
     link.href = caminho;
-    link.download = nome + '.pdf'; // Forçar o nome do arquivo
-    link.target = '_blank'; // Abrir em nova aba como fallback
+    link.download = nome + '.pdf';
+    link.target = '_blank';
     
     // Adicionar ao documento, clicar e remover
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     
-    // Feedback para o utilizador
+    // Feedback
     alert('A descarregar: ' + nome);
     
-    return false; // Prevenir comportamento padrão
+    return false;
 }
- // ===== FILTRAR DOCUMENTOS =====
+  
+    // ===== FILTRAR DOCUMENTOS =====
 function filtrarDocumentos(categoria, botao) {
     // Atualizar botões ativos
     const botoes = document.querySelectorAll('.categoria-btn-moderno');
@@ -3115,4 +3116,5 @@ function filtrarDocumentos(categoria, botao) {
 </script>
 </body>
 </html>
-<section id="documentos"
+
+function downloadPDF(caminho, nome)
