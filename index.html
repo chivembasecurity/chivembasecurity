@@ -1740,21 +1740,29 @@
             <span></span>
         </div>
 
-        <nav id="linkssecoes" aria-label="Menu principal">
-            <ul id="ulsecoes">
-                <li onclick="home(); closeMenu();" role="button" tabindex="0">HOME</li>
-                <li onclick="sobre(); closeMenu();" role="button" tabindex="0">SOBRE</li>
-                <li onclick="servico(); closeMenu();" role="button" tabindex="0">SERVIÇOS</li>
-                <li onclick="mvv(); closeMenu();" role="button" tabindex="0">MVV</li>
-                <li onclick="organograma(); closeMenu();" role="button" tabindex="0">ORGANOGRAMA</li>
-                <li onclick="politicas(); closeMenu();" role="button" tabindex="0">POLÍTICAS</li>
-                <li onclick="carreiras(); closeMenu();" role="button" tabindex="0">CARREIRAS</li>
-                <li onclick="documentos(); closeMenu();" role="button" tabindex="0">DOCUMENTOS</li>
-                <li onclick="blog(); closeMenu();" role="button" tabindex="0">BLOG</li>
-                <li onclick="contactar(); closeMenu();" role="button" tabindex="0">CONTACTAR</li>
+    <nav id="linkssecoes" aria-label="Menu principal">
+    <ul id="ulsecoes">
+        <li onclick="home(); closeMenu();" role="button" tabindex="0">HOME</li>
+        
+        <!-- Item SOBRE com dropdown -->
+        <li class="has-dropdown" id="sobreDropdown">
+            <span class="dropdown-trigger" onclick="sobre(); closeMenu();">SOBRE</span>
+            <ul class="dropdown-menu">
+                <li onclick="mvv(); closeMenu();">MVV</li>
+                <li onclick="organograma(); closeMenu();">ORGANOGRAMA</li>
+                <li onclick="politicas(); closeMenu();">POLÍTICAS</li>
+                <li onclick="documentos(); closeMenu();">DOCUMENTOS</li>
             </ul>
-        </nav>
-    </header>
+        </li>
+        
+        <li onclick="servico(); closeMenu();" role="button" tabindex="0">SERVIÇOS</li>
+        <li onclick="carreiras(); closeMenu();" role="button" tabindex="0">CARREIRAS</li>
+        <li onclick="blog(); closeMenu();" role="button" tabindex="0">BLOG</li>
+        <li onclick="contactar(); closeMenu();" role="button" tabindex="0">CONTACTAR</li>
+    </ul>
+</nav>
+    
+      </header>
 
     <!-- Overlay para menu mobile -->
     <div class="menu-overlay" id="menuOverlay"></div>
@@ -3121,3 +3129,7 @@ function filtrarDocumentos(categoria, botao) {
 </script>
 </body>
 </html>
+
+
+<nav id="linkssecoes" aria-label="Menu principal">
+   
