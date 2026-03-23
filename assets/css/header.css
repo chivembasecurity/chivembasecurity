@@ -379,6 +379,10 @@ section {
 /* ===== AJUSTES RESPONSIVOS (MOBILE) - CORRIGIDO ===== */
 @media (max-width: 750px) {
   /* Ajustes de padding */
+  .dropdown-menu li:hover {
+    background: rgba(223, 41, 53, 0.2) !important;
+    color: #343335 !important;
+}
   #inicio #inc {
     padding-top: 75px;
   }
@@ -690,6 +694,10 @@ section {
   .dropdown-menu li:active {
     padding-left: 18px !important;
   }
+  .dropdown-menu li:hover {
+    background: rgba(223, 41, 53, 0.2) !important;
+    color: #343335 !important;
+}
 }
 
 /* ===== UTILITÁRIOS ===== */
