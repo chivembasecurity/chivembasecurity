@@ -1827,6 +1827,24 @@
             </div>
         </section>
 
+        <!-- BLOCO: MINHA HISTÓRIA - APARECE SOMENTE NO MVV -->
+<section id="historia-mvv" class="minha-historia-hero">
+    <div class="container-historia">
+        <div class="rotulo-historia">
+            <span>📖 MINHA HISTÓRIA</span>
+        </div>
+        <h2>Da Visão à Realidade</h2>
+        <p>
+            A Chivemba Security nasceu da convicção de que a segurança em Angola precisava de mais do que vigilância: precisava de confiança, inovação e compromisso real. 
+            Fundada por <strong>Almerindo Chivemba</strong>, a empresa surgiu para preencher uma lacuna no mercado, oferecendo soluções que unem tecnologia de ponta, 
+            equipas altamente treinadas e uma gestão baseada na ética e transparência.
+        </p>
+        <p>
+            Hoje, somos mais do que uma empresa de segurança — somos parceiros estratégicos de quem valoriza a proteção do seu património, da sua família e do seu negócio. 
+            Cada protocolo, cada formação e cada cliente refletem a nossa missão: <strong>servir e proteger com excelência</strong>.
+        </p>
+    </div>
+</section>
    <!-- NOVA SEÇÃO SOBRE REDESENHADA - SEM EMOJIS, COM SVGs -->
 <section id="sobre-premium" class="about-premium nav-section">
     <div class="about-container">
@@ -2793,18 +2811,18 @@
 
 <script>
     // ===== TODAS AS SEÇÕES DO SITE =====
-    const sections = [
-        "inicio", "servicos", "why", "missao", "in", "allservices", 
-        "contact", "mvv", "organograma", "politicas", "emprego", 
-        "documentos", "sobre-premium", "blog"
-    ];
-
+   const sections = [
+    "inicio", "servicos", "why", "missao", "in", "allservices", 
+    "contact", "mvv", "organograma", "politicas", "emprego", 
+    "documentos", "sobre-premium", "blog", "historia-mvv"
+];
+   
     // ===== MAPEAMENTO DO MENU =====
     const menuMap = {
         'HOME': ['inicio', 'servicos', 'why', 'mvv', 'organograma'],
         'SOBRE': ['sobre-premium', 'why', 'missao', 'mvv', 'organograma', 'politicas', 'documentos', 'blog'],
         'SERVIÇOS': ['in', 'allservices', 'contact', 'emprego'],
-        'MVV': ['mvv', 'why', 'missao'],
+        'MVV': ['historia-mvv', 'sobre-premium', 'mvv', 'why', 'missao'],
         'ORGANOGRAMA': ['organograma', 'mvv', 'politicas'],
         'POLÍTICAS': ['politicas', 'documentos', 'mvv'],
         'CARREIRAS': ['emprego', 'contact'],
@@ -3085,6 +3103,3 @@ function filtrarDocumentos(categoria, botao) {
 </script>
 </body>
 </html>
-
-
-A nossa experiência e dedicação fazem a diferença na proteção dos nossos clientes
