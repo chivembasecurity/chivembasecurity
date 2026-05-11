@@ -557,20 +557,21 @@ section {
   color: #333;
 }
 
-#contact-form .form-group {
+/* NOVO: Estilos para o formulário com ID contact-web3 */
+#contact-web3 .form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
 
-#contact-form label {
+#contact-web3 label {
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
-#contact-form input,
-#contact-form select,
-#contact-form textarea {
+#contact-web3 input,
+#contact-web3 select,
+#contact-web3 textarea {
   padding: 0.75rem 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -579,15 +580,49 @@ section {
   transition: border-color 0.2s;
 }
 
-#contact-form input:focus,
-#contact-form select:focus,
-#contact-form textarea:focus {
+#contact-web3 input:focus,
+#contact-web3 select:focus,
+#contact-web3 textarea:focus {
   border-color: rgb(227,0,15);
 }
 
-#contact-form textarea {
+#contact-web3 textarea {
   resize: none;
   min-height: 150px;
+}
+
+/* NOVO: Estilos para a mensagem de feedback do Web3Forms */
+#form-message-web3 {
+  margin-top: 20px;
+}
+
+.success-message {
+  background: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  animation: slideIn 0.5s ease;
+}
+
+.error-message {
+  background: #f44336;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .btn-send {
@@ -711,19 +746,20 @@ iframe {
 }
 
 @media (min-width: 600px) {
-  #contact-form .form-group {
+  /* NOVO: Estilos responsivos para o formulário contact-web3 */
+  #contact-web3 .form-group {
     flex-direction: row;
     align-items: center;
   }
 
-  #contact-form label {
+  #contact-web3 label {
     width: 150px;
     margin-bottom: 0;
   }
 
-  #contact-form input,
-  #contact-form select,
-  #contact-form textarea {
+  #contact-web3 input,
+  #contact-web3 select,
+  #contact-web3 textarea {
     flex: 1;
   }
 }
@@ -744,7 +780,6 @@ iframe {
     flex-direction: row-reverse;
   }
 }
-
 
 /* ===== AJUSTES MOBILE PARA O TEXTO PRINCIPAL ===== */
 @media (max-width: 750px) {
@@ -791,4 +826,40 @@ iframe {
     padding-left: 50px !important;
     font-size: 1.2rem;
   }
+}
+
+#newsletter-web3 {
+  display: flex;
+  gap: 10px;
+}
+
+#newsletter-web3 input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+#newsletter-web3 input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+#newsletter-web3 button {
+  padding: 15px 30px;
+  background: #df2935;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+#newsletter-web3 button:hover {
+  background: #b71c1c;
 }
