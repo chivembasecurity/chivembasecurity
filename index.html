@@ -2115,7 +2115,9 @@
       </div>
       
       <!-- FORMULÁRIO NEWSLETTER COM FORMSUBMIT -->
-      <form class="newsletter-form" action="https://formsubmit.co/dg@chivemba-security.com" method="POST">
+     <form class="newsletter-form" action="https://formsubmit.co/dg@chivemba-security.com" method="POST">
+     <input type="hidden" name="_from" value="dg@chivemba-security.com">   
+        
         <input type="email" name="email" placeholder="O seu melhor email" required>
         
         <!-- Campos ocultos do FormSubmit -->
@@ -2618,44 +2620,43 @@
                 <p>Envie sua mensagem e nossa equipe responderá o mais rápido possível.</p>
 
                 <!-- FORMSUBMIT - ILIMITADO E GRÁTIS -->
-                <form id="contact-form" action="https://formsubmit.co/dg@chivemba-security.com" method="POST">
+          <form id="contact-form" action="https://formsubmit.co/dg@chivemba-security.com" method="POST">
+    <input type="hidden" name="_from" value="dg@chivemba-security.com">
+    
+    <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="nome" placeholder="Seu nome" required />
+    </div>
 
-                    <div class="form-group">
-                        <label for="name">Nome</label>
-                        <input type="text" id="name" name="nome" placeholder="Seu nome" required />
-                    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+    </div>
 
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-                    </div>
+    <div class="form-group">
+        <label for="subject">Assunto</label>
+        <select id="subject" name="assunto" required>
+            <option value="">Selecione</option>
+            <option value="Reclamação">Reclamação</option>
+            <option value="Recrutamento">Recrutamento</option>
+            <option value="Denúncia">Denúncia</option>
+            <option value="Informação">Pedido de Informação</option>
+            <option value="Contratação">Contratação de Serviços</option>
+        </select>
+    </div>
 
-                    <div class="form-group">
-                        <label for="subject">Assunto</label>
-                        <select id="subject" name="assunto" required>
-                            <option value="">Selecione</option>
-                            <option value="Reclamação">Reclamação</option>
-                            <option value="Recrutamento">Recrutamento</option>
-                            <option value="Denúncia">Denúncia</option>
-                            <option value="Informação">Pedido de Informação</option>
-                            <option value="Contratação">Contratação de Serviços</option>
-                        </select>
-                    </div>
+    <div class="form-group">
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="mensagem" placeholder="Escreva sua mensagem" required rows="6"></textarea>
+    </div>
 
-                    <div class="form-group">
-                        <label for="message">Mensagem</label>
-                        <textarea id="message" name="mensagem" placeholder="Escreva sua mensagem" required rows="6"></textarea>
-                    </div>
+    <input type="hidden" name="_subject" value="Novo contacto do site Chivemba Security">
+    <input type="hidden" name="_next" value="https://chivemba-security.com/">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="text" name="_honey" style="display:none">
 
-                    <!-- Campos de configuração do FormSubmit -->
-                    <input type="hidden" name="_subject" value="Novo contacto do site Chivemba Security">
-                    <input type="hidden" name="_next" value="https://chivemba-security.com/">
-                    <input type="hidden" name="_captcha" value="true">
-                    <input type="text" name="_honey" style="display:none">
-
-                    <button type="submit" class="btn-send">Enviar Mensagem</button>
-                </form>
-
+    <button type="submit" class="btn-send">Enviar Mensagem</button>
+</form>
                 <!-- Div para feedback -->
                 <div id="form-message"></div>
             </div>
